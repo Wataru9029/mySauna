@@ -12,6 +12,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -25,7 +27,7 @@
 
   <body>
     <header>
-      <nav class="mb-1 navbar navbar-expand-lg navbar-dark info-color">
+      <nav class="navbar navbar-expand-lg navbar-dark info-color">
         <%= link_to "mySauna", root_path, class: 'navbar-brand font-weight-bold font-italic' %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
             aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,8 +43,15 @@
                   <%= link_to "新規登録", signup_path, class: 'nav-link' %>
               </li>
             <% else %>
-              <li class="nav-item">
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link' %>
+            　<li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-user"></i></a>
+                  <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+                  <%= link_to "マイページ", user_path(current_user.id), class: 'dropdown-item' %>
+                  <div class="dropdown-divider"></div>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+                  </div>
               </li>
             <% end %>
           </ul>
@@ -50,6 +59,7 @@
       </nav>
     </header>
 
+    <%= render 'layouts/flash' %>
     <%= yield %>
 
     <footer class="footer text-center mt-5">

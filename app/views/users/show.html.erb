@@ -1,0 +1,16 @@
+<main class="container">
+    <div class="row mt-5">
+        <div class="card col-md-6 offset-md-3 mb-5">
+            <h4 class="card-title mt-3 text-center"><%= @user.name %></h4>
+            <div class="card-body">
+                <% if @user.introduction %>
+                    <p class="card-text"><%= @user.introduction %></p>
+                    <hr>
+                <% end %>
+                <p class="text-center">
+                    <%= link_to "編集", edit_user_path(@user.id), class: "text-muted btn btn-outline-info" %>
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
