@@ -6,6 +6,14 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+    attributes:
+      user:
+        name: ユーザー名
+        password: パスワード
+        password_confirmation: パスワード(確認用)
+        email: メールアドレス
+        introduction: プロフィール文
+        image: プロフィール画像
   date:
     abbr_day_names:
     - 日
@@ -204,9 +212,3 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
-  attributes:
-    user:
-      name: ユーザー名
-      email: メールアドレス
-      introduction: プロフィール文
-      image: プロフィール画像

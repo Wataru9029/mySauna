@@ -6,7 +6,7 @@ ja:
       not_locked: "は凍結されていません"
       not_saved:
         one: "1つのエラーがあります。修正して再度送信してください。"
-        other: "%{count}のエラーがあります。修正して再度送信して下さい。"
+        other: "%{count}つのエラーがあります。修正して再度送信して下さい。"
       taken: "は既に使用されています。"
       blank: "が入力されていません。"
       too_short: "は%{count}文字以上に設定して下さい。"
@@ -32,7 +32,7 @@ ja:
       send_instructions: '登録方法を数分以内にメールでご連絡します。'
       confirmed: 'アカウントを登録しました。'
     registrations:
-      signed_up: 'アカウント登録を受け付けました。確認のメールをお送りします。'
+      signed_up: 'アカウントを登録しました。'
       updated: 'アカウントを更新しました。'
       destroyed: 'アカウントを削除しました。またのご利用をお待ちしております。'
     unlocks:
