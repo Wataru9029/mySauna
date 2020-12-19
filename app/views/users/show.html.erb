@@ -1,2 +1,13 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<main class="container">
+    <div class="row mt-5">
+        <div class="card col-md-6 offset-md-3 mb-5">
+            <h4 class="card-title mt-3 text-center"><%= @user.name %></h4>
+            <div class="card-body">
+                <% if @user.introduction %>
+                    <p class="card-text"><%= @user.introduction %></p>
+                    <hr>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</main>
