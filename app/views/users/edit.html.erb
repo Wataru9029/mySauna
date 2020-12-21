@@ -7,6 +7,13 @@
                 <%= render "users/shared/error_messages", resource: @user %>
 
                 <div class="form-group">
+                    <%= f.label :image %><br />
+                    <p><%= image_tag @user.image.url unless @user.image.blank? %></p>
+                    <%= f.file_field :image, class: "form-control" %>
+                    <p><%= f.check_box :remove_image, class: "mt-2" %>画像を削除する</p>
+                </div>
+
+                <div class="form-group">
                     <%= f.label :name %><br />
                     <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
                 </div>

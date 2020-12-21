@@ -21,6 +21,6 @@ class UsersController < ApplicationController
 
   # プロフィール編集時に許可する属性
   def user_params
-    params.require(:user).permit(:name, :email, :introduction)
+    params.require(:user).permit(:name, :email, :image, :remove_image, :introduction)
   end
 end
