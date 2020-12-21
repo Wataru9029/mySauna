@@ -2,7 +2,7 @@
     <div class="row mt-5">
         <div class="card col-md-6 offset-md-3 mb-5">
             <h4 class="card-title mt-3 text-center"><%= @user.name %></h4>
-            <p class="d-block mx-auto"><%= image_tag @user.image.url if @user.image %></p>
+            <p class="d-block mx-auto"><%= image_tag @user.image.url unless @user.image.blank? %></p>
             <div class="card-body">
                 <% if @user.introduction %>
                     <p class="card-text"><%= @user.introduction %></p>
