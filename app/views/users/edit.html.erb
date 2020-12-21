@@ -8,6 +8,7 @@
 
                 <div class="form-group">
                     <%= f.label :image %><br />
+                    <p><%= image_tag @user.image.url if @user.image %></p>
                     <%= f.file_field :image, class: "form-control" %>
                 </div>
 
