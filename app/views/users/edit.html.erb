@@ -10,6 +10,7 @@
                     <%= f.label :image %><br />
                     <p><%= image_tag @user.image.url if @user.image %></p>
                     <%= f.file_field :image, class: "form-control" %>
+                    <p><%= f.check_box :remove_image, class: "mt-2" %>画像を削除する</p>
                 </div>
 
                 <div class="form-group">
