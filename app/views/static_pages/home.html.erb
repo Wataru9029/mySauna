@@ -5,6 +5,7 @@
         <% @posts.each do |post| %>
             <div class="card col-md-8 offset-md-2 mb-5">
                 <h4 class="card-title mt-3 text-center"><%= post.title %></h4>
+                <p class="card-text text-right"><small class="text-muted"><%= l post.updated_at %></small></p>
                 <p class="d-block mx-auto"><%= image_tag post.image.url unless post.image.blank? %></p>
                 <div class="card-body">
                     <p class="card-text">
