@@ -2,7 +2,7 @@
 
 <main class="container">
     <div class="row">
-        <% @user.posts.each do |post| %>
+        <% @posts.each do |post| %>
             <div class="card col-md-8 offset-md-2 mb-5">
                 <h4 class="card-title mt-3 text-center"><%= post.title %></h4>
                 <p class="text-center">by: <%= link_to post.user.name, user_path(post.user_id), class: "text-muted" %></p>
