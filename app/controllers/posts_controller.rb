@@ -33,6 +33,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy if @post.user_id == current_user.id
+    redirect_to root_url
+  end
+
   private
 
   # 記事投稿時に許可する属性
