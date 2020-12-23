@@ -25,7 +25,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.update_attributes(post_params)
+    if @post.user_id == current_user.id && @post.update_attributes(post_params)
       flash[:info] = "記事が編集されました！"
       redirect_to @post
     else
