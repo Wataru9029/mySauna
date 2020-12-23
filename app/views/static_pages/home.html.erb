@@ -11,7 +11,12 @@
                     <p class="card-text">
                     　　<%= post.description %>
                     </p>
-                    <p class="text-center"><%= link_to "もっとみる", post_path(post), class: "text-muted btn btn-outline-info" %></p>
+                    <p class="text-center">
+                        <%= link_to "もっとみる", post_path(post), class: "text-muted btn btn-outline-info" %>
+                        <% if post.user_id == current_user.id %>
+                            <%= link_to "編集", edit_post_path(post), class: "btn btn-outline-success" %>
+                        <% end %>
+                    </p>
                 </div>
             </div>
         <% end %>
