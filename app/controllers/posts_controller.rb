@@ -19,6 +19,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
   private
 
   # 記事投稿時に許可する属性
