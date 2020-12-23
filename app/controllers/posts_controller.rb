@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
+
   def show
     @post = Post.find(params[:id])
   end
@@ -8,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new
+    @post = Post.new(user_id: current_user.id)
     if @post.update_attributes(post_params)
       flash[:info] = "新規記事が投稿されました！"
       redirect_to root_url
