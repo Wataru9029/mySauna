@@ -2,6 +2,7 @@
     <div class="row">
         <div class="card col-md-8 offset-md-2 mt-5 mb-5">
             <h4 class="card-title mt-3 text-center"><%= @post.title %></h4>
+            <p class="text-center">by: <%= link_to @post.user.name, user_path(@post.user_id), class: "text-muted" %></p>
             <p class="card-text text-right"><small class="text-muted"><%= l @post.updated_at %></small></p>
             <p class="d-block mx-auto"><%= image_tag @post.image.url unless @post.image.blank? %></p>
             <div class="card-body">
