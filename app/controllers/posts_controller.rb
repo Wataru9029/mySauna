@@ -23,6 +23,16 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def update
+    @post = Post.find(params[:id])
+    if @post.update_attributes(post_params)
+      flash[:info] = "記事が編集されました！"
+      redirect_to @post
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   # 記事投稿時に許可する属性
