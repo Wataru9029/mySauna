@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     @post = Post.new(user_id: current_user.id)
     if @post.update_attributes(post_params)
       flash[:info] = "新規記事が投稿されました！"
-      redirect_to root_url
+      redirect_to @post
     else
       render 'new'
     end
