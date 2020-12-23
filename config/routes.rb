@@ -13,4 +13,5 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
   resources :users, only: [:show, :edit, :update]
+  resources :posts, except: [:index]
 end

@@ -1,0 +1,25 @@
+<main class="container">
+    <div class="row">
+        <div class="card col-md-8 offset-md-2 mt-5 mb-5">
+            <h4 class="card-title mt-3 text-center"><%= @post.title %></h4>
+            <p class="text-center">by: <%= link_to @post.user.name, user_path(@post.user_id), class: "text-muted" %></p>
+            <p class="card-text text-right"><small class="text-muted"><%= l @post.updated_at %></small></p>
+            <p class="d-block mx-auto"><%= image_tag @post.image.url unless @post.image.blank? %></p>
+            <div class="card-body">
+                <p class="card-text">所在地: <%= @post.address %></p>
+                <hr>
+                <p class="card-text">施設説明:</p>
+                <p><%= @post.description %></p>
+                <hr>
+                <p class="card-text">参考URL: <%= @post.site_url %></p>
+                <hr>
+                <% if @post.user_id == current_user.id %>
+                    <div class="text-center">
+                        <%= link_to "編集", edit_post_path(@post), class: "btn btn-outline-success" %>
+                        <%= link_to "削除", post_path(@post), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-outline-danger" %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</main>
