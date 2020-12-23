@@ -14,7 +14,7 @@
             </div>
         </div>
 
-        <h3 class="mt-5 mb-5 col-md-6 offset-md-3 text-center">♨︎ 投稿したサウナ ♨︎</h3>
+        <h3 class="mt-5 mb-5 col-md-6 offset-md-3 text-center">♨︎ 投稿したサウナ <%= @user.posts.count %>件♨︎</h3>
 
         <% @user.posts.each do |post| %>
             <div class="card col-md-8 offset-md-2 mb-5">
