@@ -46,6 +46,9 @@
                   <%= link_to "簡単ログイン", users_guest_sign_in_path, method: :post, class: 'nav-link btn btn-success my-1 my-sm-0' %>
               </li>
             <% else %>
+            <li class="nav-item">
+                <%= link_to "新規投稿", new_post_path, class: 'nav-link' %>
+            </li>
             　<li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">
