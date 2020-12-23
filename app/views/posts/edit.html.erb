@@ -13,6 +13,7 @@
 
                 <div class="form-group">
                     <%= f.label :image %><br />
+                    <p><%= image_tag @post.image.url unless @post.image.blank? %></p>
                     <%= f.file_field :image, class: "form-control" %>
                 </div>
 
