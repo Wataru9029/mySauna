@@ -9,8 +9,9 @@
                 <p class="d-block mx-auto"><%= image_tag post.image.url unless post.image.blank? %></p>
                 <div class="card-body">
                     <p class="card-text">
-                    <%= post.description %>
+                    　　<%= post.description %>
                     </p>
+                    <p class="text-center"><%= link_to "もっとみる", post_path(post), class: "text-muted btn btn-outline-info" %></p>
                 </div>
             </div>
         <% end %>
