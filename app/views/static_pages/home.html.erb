@@ -14,7 +14,7 @@
                     </p>
                     <p class="text-center">
                         <%= link_to "もっとみる", post_path(post), class: "text-muted btn btn-outline-info" %>
-                        <% if post.user_id == current_user.id %>
+                        <% if user_signed_in? && post.user_id == current_user.id %>
                             <%= link_to "編集", edit_post_path(post), class: "btn btn-outline-success" %>
                             <%= link_to "削除", post_path(post), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-outline-danger" %>
                         <% end %>
