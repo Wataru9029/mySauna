@@ -18,6 +18,26 @@
                         <%= link_to "編集", edit_post_path(@post), class: "btn btn-outline-success" %>
                         <%= link_to "削除", post_path(@post), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-outline-danger" %>
                     </div>
+                    <hr>
+                <% end %>
+                <h5 class="text-center text-muted mt-5 mb-3">コメント一覧(<%= @comments.count %>)</h5>
+                <% @comments.each do |c| %>
+                    <div>
+                        <%= c.content %>
+                        <br>
+                        <small>by: <%= link_to @post.user.name, user_path(@post.user_id), class: "text-muted" %></small>
+                        <br>
+                        <small class="text-muted"><%= l c.updated_at %></small>
+                        <hr>
+                    </div>
+                <% end %>
+
+                <%= form_for [@post, @comment] do |f| %>
+                    <div class="form-group">
+                        <%= f.text_field :content, class: "form-control", id: "commentForm" %>
+                        <%= f.hidden_field :post_id, value: @post.id %>
+                    </div>
+                    <%= f.submit "コメントする", class: "btn btn-info mb-2" %>
                 <% end %>
             </div>
         </div>
