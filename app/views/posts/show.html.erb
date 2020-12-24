@@ -13,7 +13,7 @@
                 <hr>
                 <p class="card-text">参考URL: <%= @post.site_url %></p>
                 <hr>
-                <% if @post.user_id == current_user.id %>
+                <% if user_signed_in? && @post.user_id == current_user.id %>
                     <div class="text-center">
                         <%= link_to "編集", edit_post_path(@post), class: "btn btn-outline-success" %>
                         <%= link_to "削除", post_path(@post), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-outline-danger" %>
@@ -32,12 +32,14 @@
                     </div>
                 <% end %>
 
-                <%= form_for [@post, @comment] do |f| %>
-                    <div class="form-group">
-                        <%= f.text_field :content, class: "form-control", id: "commentForm" %>
-                        <%= f.hidden_field :post_id, value: @post.id %>
-                    </div>
-                    <%= f.submit "コメントする", class: "btn btn-info mb-2" %>
+                <% if user_signed_in? %>
+                    <%= form_for [@post, @comment] do |f| %>
+                        <div class="form-group">
+                            <%= f.text_field :content, class: "form-control", id: "commentForm" %>
+                            <%= f.hidden_field :post_id, value: @post.id %>
+                        </div>
+                        <%= f.submit "コメントする", class: "btn btn-info mb-2" %>
+                    <% end %>
                 <% end %>
             </div>
         </div>
