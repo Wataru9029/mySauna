@@ -20,10 +20,22 @@
                     </div>
                     <hr>
                 <% end %>
-                <h5 class="text-center text-muted mt-5 mb-3">コメント</h5>
+                <h5 class="text-center text-muted mt-5 mb-3">コメント一覧(<%= @comments.count %>)</h5>
+                <% @comments.each do |c| %>
+                    <div>
+                        <%= c.content %>
+                        <br>
+                        <small>by: <%= link_to @post.user.name, user_path(@post.user_id), class: "text-muted" %></small>
+                        <br>
+                        <small class="text-muted"><%= l c.updated_at %></small>
+                        <hr>
+                    </div>
+                <% end %>
+
                 <%= form_for [@post, @comment] do |f| %>
                     <div class="form-group">
                         <%= f.text_field :content, class: "form-control", id: "commentForm" %>
+                        <%= f.hidden_field :post_id, value: @post.id %>
                     </div>
                     <%= f.submit "コメントする", class: "btn btn-info mb-2" %>
                 <% end %>
