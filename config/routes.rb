@@ -13,5 +13,7 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
   resources :users, only: [:show, :edit, :update]
-  resources :posts, except: [:index]
+  resources :posts, except: [:index] do
+    resources :comments, only: [:create]
+  end
 end
