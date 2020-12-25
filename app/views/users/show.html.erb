@@ -22,6 +22,7 @@
                 <p class="text-center">by: <%= link_to post.user.name, user_path(post.user_id), class: "text-muted" %></p>
                 <p class="card-text text-right"><small class="text-muted"><%= l post.updated_at %></small></p>
                 <p class="d-block mx-auto"><%= image_tag post.image.url unless post.image.blank? %></p>
+                <%= render 'posts/tag_list', tag_list: post.tag_list %>
                 <div class="card-body">
                     <p class="card-text">
                     　　<%= post.description %>
