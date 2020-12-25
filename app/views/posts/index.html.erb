@@ -1,0 +1,28 @@
+<h3 class="mt-5 mb-5 text-center">♨︎ 絞り込み結果: <%= @posts.count %>件 ♨︎</h3>
+
+<main class="container">
+    <div class="row">
+        <% @posts.each do |post| %>
+            <div class="card col-md-8 offset-md-2 mb-5">
+                <h4 class="card-title mt-3 text-center"><%= post.title %></h4>
+                <p class="text-center">by: <%= link_to post.user.name, user_path(post.user_id), class: "text-muted" %></p>
+                <p class="card-text text-right"><small class="text-muted"><%= l post.updated_at %></small></p>
+                <p class="d-block mx-auto"><%= image_tag post.image.url unless post.image.blank? %></p>
+                <%= render 'posts/tag_list', tag_list: post.tag_list %>
+                <div class="card-body">
+                    <p class="card-text">
+                    　　<%= post.description %>
+                    </p>
+                    <p class="text-center">
+                        <%= link_to "もっとみる", post_path(post), class: "text-muted btn btn-outline-info" %>
+                        <% if user_signed_in? && post.user_id == current_user.id %>
+                            <%= link_to "編集", edit_post_path(post), class: "btn btn-outline-success" %>
+                            <%= link_to "削除", post_path(post), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-outline-danger" %>
+                        <% end %>
+                    </p>
+                </div>
+            </div>
+        <% end %>
+    </div>
+    <%= paginate @posts %>
+</main>

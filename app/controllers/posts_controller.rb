@@ -1,6 +1,17 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
+  PER = 5
+
+  def index
+    if params[:tag_name]
+      @posts = Post.tagged_with("#{params[:tag_name]}")
+    else
+      @posts = Post.all
+    end
+    @posts = @posts.order('updated_at DESC').page(params[:page]).per(PER)
+  end
+
   def show
     @post = Post.find(params[:id])
     @comments = @post.comments
