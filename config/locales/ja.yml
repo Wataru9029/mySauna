@@ -19,6 +19,7 @@ ja:
         image: 施設画像
         address: 所在地
         description: 施設説明
+        tag_list: タグ
         site_url: 参考URL
   date:
     abbr_day_names:
