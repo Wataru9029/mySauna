@@ -8,6 +8,11 @@
                 <p class="text-center">by: <%= link_to post.user.name, user_path(post.user_id), class: "text-muted" %></p>
                 <p class="card-text text-right"><small class="text-muted"><%= l post.updated_at %></small></p>
                 <p class="d-block mx-auto"><%= image_tag post.image.url unless post.image.blank? %></p>
+                <div class="tag-list ml-3">
+                    <% post.tag_list.each do |tag| %>
+                        <span class="badge badge-info mr-2"><%= tag %></span>
+                    <% end %>
+                </div>
                 <div class="card-body">
                     <p class="card-text">
                     　　<%= post.description %>
