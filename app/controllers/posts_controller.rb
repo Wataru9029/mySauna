@@ -59,6 +59,12 @@ class PostsController < ApplicationController
     @posts = @posts.order('updated_at DESC').page(params[:page]).per(PER)
   end
 
+  def favorites
+    @posts = current_user.liked_posts
+    @posts = @posts.order('updated_at DESC').page(params[:page]).per(PER)
+    @like = Like.new
+  end
+
   private
 
   # 記事投稿時に許可する属性
