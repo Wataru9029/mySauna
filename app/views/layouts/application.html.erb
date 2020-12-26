@@ -35,29 +35,35 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
           <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <%= form_tag(search_path,:method => 'get', class: 'nav-link') do %>
+                <%= text_field_tag :title_or_description_cont %>
+                <%= submit_tag '検索', :name => nil, class: "btn btn-light btn-sm my-1 my-sm-0" %>
+              <% end %>
+            </li>
             <% unless user_signed_in? %>
               <li class="nav-item">
-                  <%= link_to "ログイン", login_path, class: 'nav-link' %>
+                <%= link_to "ログイン", login_path, class: 'nav-link my-2' %>
               </li>
               <li class="nav-item">
-                  <%= link_to "新規登録", signup_path, class: 'nav-link' %>
+                <%= link_to "新規登録", signup_path, class: 'nav-link my-2' %>
               </li>
               <li class="nav-item">
-                  <%= link_to "簡単ログイン", users_guest_sign_in_path, method: :post, class: 'nav-link btn btn-success my-1 my-sm-0' %>
+                <%= link_to "簡単ログイン", users_guest_sign_in_path, method: :post, class: 'nav-link btn btn-success my-1 my-sm-0' %>
               </li>
             <% else %>
             <li class="nav-item">
-                <%= link_to "新規投稿", new_post_path, class: 'nav-link' %>
+              <%= link_to "新規投稿", new_post_path, class: 'nav-link my-2' %>
             </li>
-            　<li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  <i class="fas fa-user"></i></a>
-                  <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
-                  <%= link_to "マイページ", user_path(current_user.id), class: 'dropdown-item' %>
-                  <div class="dropdown-divider"></div>
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
-                  </div>
+            　<li class="nav-item dropdown my-2">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user"></i></a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+                <%= link_to "マイページ", user_path(current_user.id), class: 'dropdown-item' %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+                </div>
               </li>
             <% end %>
           </ul>
