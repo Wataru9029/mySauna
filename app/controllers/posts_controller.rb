@@ -1,8 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :search]
 
-  PER = 5
-
   def index
     if params[:tag_name]
       @posts = Post.tagged_with("#{params[:tag_name]}")
