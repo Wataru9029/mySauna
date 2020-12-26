@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
+  PER = 5
+
   def show
     @user = User.find(params[:id])
-    @posts = Post.all
+    @posts = @user.posts.order('updated_at DESC').page(params[:page]).per(PER)
   end
 
   def edit
