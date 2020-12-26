@@ -8,12 +8,14 @@ class PostsController < ApplicationController
       @posts = Post.all
     end
     @posts = @posts.order('updated_at DESC').page(params[:page]).per(PER)
+    @like = Like.new
   end
 
   def show
     @post = Post.find(params[:id])
     @comments = @post.comments
     @comment = Comment.new
+    @like = Like.new
   end
 
   def new
