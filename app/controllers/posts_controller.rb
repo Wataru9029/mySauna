@@ -8,12 +8,14 @@ class PostsController < ApplicationController
       @posts = Post.all
     end
     @posts = @posts.order('updated_at DESC').page(params[:page]).per(PER)
+    @like = Like.new
   end
 
   def show
     @post = Post.find(params[:id])
     @comments = @post.comments
     @comment = Comment.new
+    @like = Like.new
   end
 
   def new
@@ -55,6 +57,12 @@ class PostsController < ApplicationController
   def search
     @posts = Post.search(params[:title_or_description_cont])
     @posts = @posts.order('updated_at DESC').page(params[:page]).per(PER)
+  end
+
+  def favorites
+    @posts = current_user.liked_posts
+    @posts = @posts.order('updated_at DESC').page(params[:page]).per(PER)
+    @like = Like.new
   end
 
   private

@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :comments
+  has_many :likes, dependent: :destroy
+  has_many :liked_posts, through: :likes, source: :post
 
   mount_uploader :image, ImageUploader
   # Include default devise modules. Others available are:
@@ -16,5 +18,9 @@ class User < ApplicationRecord
       user.name = "ゲストユーザー"
       user.password = SecureRandom.urlsafe_base64
     end
+  end
+
+  def already_liked?(post)
+    self.likes.exists?(post_id: post.id)
   end
 end

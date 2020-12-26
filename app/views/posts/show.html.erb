@@ -7,6 +7,7 @@
             <p class="d-block mx-auto"><%= image_tag @post.image.url unless @post.image.blank? %></p>
             <%= render 'posts/tag_list', tag_list: @post.tag_list %>
             <div class="card-body">
+                <%= render 'likes/like_form', post: @post %>
                 <p class="card-text">所在地: <%= @post.address %></p>
                 <hr>
                 <p class="card-text">施設説明:</p>
