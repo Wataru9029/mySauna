@@ -41,6 +41,11 @@
                 <%= submit_tag '検索', :name => nil, class: "btn btn-light btn-sm my-1 my-sm-0" %>
               <% end %>
             </li>
+            <li class="nav-item">
+              <%= link_to rank_path, class: 'nav-link my-2' do %>
+                <i class="fas fa-crown"></i> 人気サウナ10選
+              <% end %>
+            </li>
             <% unless user_signed_in? %>
               <li class="nav-item">
                 <%= link_to "ログイン", login_path, class: 'nav-link my-2' %>
