@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
     before_action :configure_permitted_parameters, if: :devise_controller?
 
+    PER = 5
+
     protected
 
     # 入力フォームからアカウント名情報をDBに保存するために追加

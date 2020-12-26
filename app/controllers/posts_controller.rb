@@ -1,7 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:show]
-
-  PER = 5
+  before_action :authenticate_user!, except: [:show, :search]
 
   def index
     if params[:tag_name]
@@ -52,6 +50,11 @@ class PostsController < ApplicationController
       flash[:danger] = "記事が削除されました！"
     end
     redirect_to root_url
+  end
+
+  def search
+    @posts = Post.search(params[:title_or_description_cont])
+    @posts = @posts.order('updated_at DESC').page(params[:page]).per(PER)
   end
 
   private
