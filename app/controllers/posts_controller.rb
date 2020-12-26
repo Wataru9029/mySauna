@@ -65,6 +65,11 @@ class PostsController < ApplicationController
     @like = Like.new
   end
 
+  def rank
+    posts = Post.includes(:liked_users).sort {|a,b| b.liked_users.size <=> a.liked_users.size}
+    @posts = Kaminari.paginate_array(posts).page(params[:page]).limit(10)
+  end
+
   private
 
   # 記事投稿時に許可する属性

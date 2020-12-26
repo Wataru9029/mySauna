@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   end
   get "search" => "posts#search"
   get "favorites" => "posts#favorites"
+  get "rank" => "posts#rank"
 end
