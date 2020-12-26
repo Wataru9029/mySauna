@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :search]
+  before_action :authenticate_user!, except: [:show, :search, :rank]
 
   def index
     if params[:tag_name]
@@ -63,6 +63,11 @@ class PostsController < ApplicationController
     @posts = current_user.liked_posts
     @posts = @posts.order('updated_at DESC').page(params[:page]).per(PER)
     @like = Like.new
+  end
+
+  def rank
+    posts = Post.includes(:liked_users).sort {|a,b| b.liked_users.size <=> a.liked_users.size}
+    @posts = Kaminari.paginate_array(posts).page(params[:page]).limit(10)
   end
 
   private
