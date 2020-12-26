@@ -7,7 +7,18 @@
         <%= render 'posts/tag_list', tag_list: post.tag_list %>
         <div class="card-body">
             <p class="card-text">
-            　　<%= post.description %>
+            　  <%= post.description %>
+                <div class="like-form mb-3">
+                    <% if current_user.already_liked?(post) %>
+                        <%= link_to post_like_path(post), method: :delete, class: "mr-3" do %>
+                            <i class="fas fa-star"></i> <span class="text-muted"><%= post.likes.count %></span>
+                        <% end %>
+                    <% else %>
+                        <%= link_to post_likes_path(post), class: "mr-3" do %>
+                            <i class="far fa-star"></i> <span class="text-muted"><%= post.likes.count %></span>
+                        <% end %>
+                    <% end %>
+                </div>
             </p>
             <p class="text-center">
                 <%= link_to "もっとみる", post_path(post), class: "text-muted btn btn-outline-info" %>
