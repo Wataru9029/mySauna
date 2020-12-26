@@ -1,10 +1,10 @@
 <div class="like-form mb-3">
     <% if current_user.already_liked?(post) %>
-        <%= link_to post_like_path(post), method: :delete, class: "mr-3" do %>
+        <%= link_to post_like_path(post, Like.find_by(post: post, user: current_user)), method: :delete do %>
             <i class="fas fa-star"></i> <span class="text-muted"><%= post.likes.count %></span>
         <% end %>
     <% else %>
-        <%= link_to post_likes_path(post), class: "mr-3" do %>
+        <%= link_to post_likes_path(post), method: :post do %>
             <i class="far fa-star"></i> <span class="text-muted"><%= post.likes.count %></span>
         <% end %>
     <% end %>
