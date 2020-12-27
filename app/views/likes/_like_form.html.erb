@@ -1,4 +1,4 @@
-<div class="like-form mb-3">
+<div class="like-form mb-3" id="like-form-<%= post.id %>">
     <% if user_signed_in? %>
         <% if current_user.already_liked?(post) %>
             <%= link_to post_like_path(post, Like.find_by(post_id: post.id, user: current_user.id)), method: :delete, remote: true do %>
