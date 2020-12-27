@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :search, :rank]
+  before_action :authenticate_user!, except: [:index, :show, :search, :rank]
 
   def index
     if params[:tag_name]
