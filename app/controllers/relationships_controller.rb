@@ -9,7 +9,6 @@ class RelationshipsController < ApplicationController
     else
       flash[:danger] = "ユーザーのフォローに失敗しました"
     end
-    redirect_to @user
   end
 
   def destroy
@@ -19,7 +18,6 @@ class RelationshipsController < ApplicationController
     else
       flash[:danger] = "ユーザーのフォロー解除に失敗しました"
     end
-    redirect_to @user
   end
 
   private
