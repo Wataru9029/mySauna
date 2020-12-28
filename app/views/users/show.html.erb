@@ -9,7 +9,10 @@
                     <hr>
                 <% end %>
                 <p class="text-center">
-                    <%= link_to "編集", edit_user_path(@user.id), class: "text-muted btn btn-outline-info" %>
+                <%= render "relationships/follow_button", user: @user %>
+                    <% if current_user == @user %>
+                        <%= link_to "編集", edit_user_path(@user.id), class: "text-muted btn btn-outline-info" %>
+                    <% end %>
                 </p>
             </div>
         </div>
