@@ -70,6 +70,10 @@ class PostsController < ApplicationController
     @posts = Kaminari.paginate_array(posts).page(params[:page]).limit(10)
   end
 
+  def timeline
+    @posts = current_user.feed.order('updated_at DESC').page(params[:page]).per(PER)
+  end
+
   private
 
   # 記事投稿時に許可する属性
