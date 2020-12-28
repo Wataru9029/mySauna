@@ -3,7 +3,7 @@
         <% if current_user.following?(user) %>
             <%= form_for(current_user.relationships.find_by(follow_id: user.id), method: :delete, remote: true) do |f| %>
                 <%= f.hidden_field :follow_id, :value => user.id %>
-                <%= f.submit "フォロー解除", class: "btn btn-danger btn-block" %>
+                <%= f.submit "フォロー解除", class: "btn btn-outline-primary btn-block" %>
             <% end %>
         <% else %>
             <%= form_for(current_user.relationships.build, remote: true) do |f| %>
