@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   get "search" => "posts#search"
   get "favorites" => "posts#favorites"
   get "rank" => "posts#rank"
+  get "timeline" => "posts#timeline"
 end
