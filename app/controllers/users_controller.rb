@@ -20,6 +20,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def followings
+    @users = current_user.followings.page(params[:page]).per(PER)
+  end
+
+  def followers
+    @users = current_user.followers.page(params[:page]).per(PER)
+  end
+
   private
 
   # プロフィール編集時に許可する属性
