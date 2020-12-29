@@ -57,14 +57,20 @@
                 <%= link_to "簡単ログイン", users_guest_sign_in_path, method: :post, class: 'nav-link btn btn-success my-1 my-sm-0' %>
               </li>
             <% else %>
-            <li class="nav-item">
-              <%= link_to "新規投稿", new_post_path, class: 'nav-link my-2' %>
-            </li>
+              <li class="nav-item">
+                <%= link_to "新規投稿", new_post_path, class: 'nav-link my-2' %>
+              </li>
             　<li class="nav-item dropdown my-2">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-user"></i></a>
+                <%= current_user.name %>
                 <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+                <% if current_user.admin? %>
+                  <%= link_to rails_admin_path, class: 'dropdown-item' do %>
+                    <i class="fas fa-user-cog"></i> 管理画面へ
+                  <% end %>
+                  <div class="dropdown-divider"></div>
+                <% end %>
                 <%= link_to "マイページ", user_path(current_user.id), class: 'dropdown-item' %>
                 <%= link_to "タイムライン", timeline_path, class: 'dropdown-item' %>
                 <%= link_to current_user.followings.count.to_s + "フォロー中", followings_path, class: 'dropdown-item' %>
