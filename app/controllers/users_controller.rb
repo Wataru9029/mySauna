@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:show]
+  before_action :correct_user, only: [:edit, :update]
 
   def show
     @user = User.find(params[:id])
@@ -33,5 +34,14 @@ class UsersController < ApplicationController
   # プロフィール編集時に許可する属性
   def user_params
     params.require(:user).permit(:name, :email, :image, :remove_image, :introduction)
+  end
+
+  # 権限のないページへのアクセス&編集を制限
+  def correct_user
+    user = User.find(params[:id])
+    unless current_user && current_user == user
+      flash[:danger] = "権限がありません！"
+      redirect_to(root_url)
+    end
   end
 end
