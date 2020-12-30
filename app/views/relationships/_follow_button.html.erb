@@ -1,4 +1,4 @@
-<% unless current_user == user %>
+<% if user_signed_in? && current_user != user %>
     <div id="follow-btn-<%= user.id %>">
         <% if current_user.following?(user) %>
             <%= form_for(current_user.relationships.find_by(follow_id: user.id), method: :delete, remote: true) do |f| %>
