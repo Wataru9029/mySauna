@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'
@@ -13,6 +14,9 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
   resources :users, only: [:show, :edit, :update]
+  get "followings" => "users#followings"
+  get "followers" => "users#followers"
+
   resources :posts do
     resources :comments, only: [:create]
     resources :likes, only: [:create, :destroy]
@@ -21,4 +25,5 @@ Rails.application.routes.draw do
   get "search" => "posts#search"
   get "favorites" => "posts#favorites"
   get "rank" => "posts#rank"
+  get "timeline" => "posts#timeline"
 end

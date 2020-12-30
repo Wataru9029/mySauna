@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search, :rank]
+  before_action :correct_user, only: [:edit, :update, :update]
+
 
   def index
     if params[:tag_name]
@@ -70,10 +72,23 @@ class PostsController < ApplicationController
     @posts = Kaminari.paginate_array(posts).page(params[:page]).limit(10)
   end
 
+  def timeline
+    @posts = current_user.feed.order('updated_at DESC').page(params[:page]).per(PER)
+  end
+
   private
 
   # 記事投稿時に許可する属性
   def post_params
     params.require(:post).permit(:title, :image, :remove_image, :address, :description, :site_url, :tag_list)
+  end
+
+  # 権限のないページへのアクセス&編集を制限
+  def correct_user
+    user = Post.find(params[:id]).user
+    unless current_user && current_user == user
+      flash[:danger] = "権限がありません！"
+      redirect_to(root_url)
+    end
   end
 end
