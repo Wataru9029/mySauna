@@ -73,8 +73,8 @@
                   <% end %>
                 <%= link_to "マイページ", user_path(current_user.id), class: 'dropdown-item' %>
                 <%= link_to "タイムライン", timeline_path, class: 'dropdown-item' %>
-                <%= link_to current_user.followings.count.to_s + "フォロー中", followings_path, class: 'dropdown-item' %>
-                <%= link_to current_user.followers.count.to_s + "フォロワー", followers_path, class: 'dropdown-item' %>
+                <%= link_to current_user.followings.count.to_s + "フォロー中", followings_user_path(current_user.id), class: 'dropdown-item' %>
+                <%= link_to current_user.followers.count.to_s + "フォロワー", followers_user_path(current_user.id), class: 'dropdown-item' %>
                 <%= link_to "お気に入り", favorites_path, class: 'dropdown-item' %>
                 <div class="dropdown-divider"></div>
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>

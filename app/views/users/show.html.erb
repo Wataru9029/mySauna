@@ -8,6 +8,14 @@
                     <p class="card-text"><%= @user.introduction %></p>
                     <hr>
                 <% end %>
+                <p class="card-text">
+                  フォロー数: <%= link_to @user.followings.count, followings_user_path(@user.id), class: "text-dark" %>
+                </p>
+                <hr>
+                <p class="card-text">
+                  フォロワー: <%= link_to @user.followers.count, followers_user_path(@user.id), class: "text-dark" %>
+                </p>
+                <hr>
                 <p class="text-center">
                 <%= render "relationships/follow_button", user: @user %>
                     <% if current_user == @user %>

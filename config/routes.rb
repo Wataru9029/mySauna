@@ -14,8 +14,11 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
   resources :users, only: [:show, :edit, :update]
-  get "followings" => "users#followings"
-  get "followers" => "users#followers"
+  resources :users do
+    member do
+      get :followings, :followers
+    end
+  end
 
   resources :posts do
     resources :comments, only: [:create]
