@@ -46,6 +46,16 @@
                 <i class="fas fa-crown"></i> 人気サウナ10選
               <% end %>
             </li>
+            <li class="nav-item">
+              <%= link_to rate_path, class: 'nav-link my-2' do %>
+                <i class="fas fa-star"></i> 高評価サウナ
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to infection_control_path, class: 'nav-link my-2' do %>
+                <i class="fas fa-bath"></i>  衛生的サウナ
+              <% end %>
+            </li>
             <% unless user_signed_in? %>
               <li class="nav-item">
                 <%= link_to "ログイン", login_path, class: 'nav-link my-2' %>

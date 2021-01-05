@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show, :search, :rank]
+  before_action :authenticate_user!, except: [:index, :show, :search, :rank, :rate, :infection_control]
   before_action :correct_user, only: [:edit, :update, :update]
 
 
@@ -70,6 +70,14 @@ class PostsController < ApplicationController
   def rank
     posts = Post.includes(:liked_users).sort {|a,b| b.liked_users.size <=> a.liked_users.size}
     @posts = Kaminari.paginate_array(posts).page(params[:page]).limit(10)
+  end
+
+  def rate
+    @posts = Post.all.order('rate DESC').page(params[:page]).per(PER)
+  end
+
+  def infection_control
+    @posts = Post.all.order('infection_control_rate DESC').page(params[:page]).per(PER)
   end
 
   def timeline
