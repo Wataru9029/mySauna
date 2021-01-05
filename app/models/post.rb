@@ -12,6 +12,14 @@ class Post < ApplicationRecord
   validates :address, length: { maximum: 200 }
   validates :description, presence: true, length: { maximum: 1200 }
   validates :site_url, length: { maximum: 200 }, format: /\A#{URI::regexp(%w(http https))}\z/
+  validates :rate, numericality: {
+    less_than_or_equal_to: 5,
+    greater_than_or_equal_to: 1
+  }, presence: true
+  validates :infection_control_rate, numericality: {
+    less_than_or_equal_to: 5,
+    greater_than_or_equal_to: 1
+  }, if: Proc.new { |post| post.infection_control_rate.present? }
 
   def self.search(search)
     return Post.all unless search

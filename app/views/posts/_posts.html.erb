@@ -8,6 +8,14 @@
         <div class="card-body">
             <p class="card-text">
             　  <%= post.description %>
+                <% if post.rate %>
+                    <p class="card-text">おすすめ度: <%= "⭐️" * post.rate %></p>
+                    <hr>
+                <% end %>
+                <% if post.infection_control_rate %>
+                    <p class="card-text">感染対策度: <%= "⭐️" * post.infection_control_rate %></p>
+                    <hr>
+                <% end %>
                 <%= render 'likes/like', post: post %>
             </p>
             <p class="text-center">
