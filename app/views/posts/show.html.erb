@@ -13,7 +13,7 @@
                 <p class="card-text">施設説明:</p>
                 <p><%= @post.description %></p>
                 <hr>
-                <p class="card-text">参考URL: <%= @post.site_url %></p>
+                <p class="card-text">参考URL: <%= link_to @post.site_url, @post.site_url, class: "text-muted", target: :_blank %></p>
                 <hr>
                 <% if @post.rate %>
                     <p class="card-text">おすすめ度: <%= "⭐️" * @post.rate %></p>
