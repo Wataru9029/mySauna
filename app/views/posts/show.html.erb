@@ -15,6 +15,10 @@
                 <hr>
                 <p class="card-text">参考URL: <%= @post.site_url %></p>
                 <hr>
+                <% if @post.rate %>
+                    <p class="card-text">おすすめ度: <%= "⭐️" * @post.rate %></p>
+                    <hr>
+                <% end %>
                 <% if user_signed_in? && @post.user_id == current_user.id %>
                     <div class="text-center">
                         <%= link_to "編集", edit_post_path(@post), class: "btn btn-outline-success" %>

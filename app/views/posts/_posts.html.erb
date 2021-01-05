@@ -8,6 +8,10 @@
         <div class="card-body">
             <p class="card-text">
             　  <%= post.description %>
+                <% if post.rate %>
+                    <p class="card-text">おすすめ度: <%= "⭐️" * post.rate %></p>
+                    <hr>
+                <% end %>
                 <%= render 'likes/like', post: post %>
             </p>
             <p class="text-center">
