@@ -22,6 +22,7 @@ ja:
         tag_list: タグ
         site_url: 参考URL
         rate: おすすめ度
+        infection_control_rate: 感染対策度
   date:
     abbr_day_names:
     - 日

@@ -80,7 +80,7 @@ class PostsController < ApplicationController
 
   # 記事投稿時に許可する属性
   def post_params
-    params.require(:post).permit(:title, :image, :remove_image, :address, :description, :site_url, :tag_list, :rate)
+    params.require(:post).permit(:title, :image, :remove_image, :address, :description, :site_url, :tag_list, :rate, :infection_control_rate)
   end
 
   # 権限のないページへのアクセス&編集を制限
