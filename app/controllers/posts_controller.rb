@@ -72,6 +72,14 @@ class PostsController < ApplicationController
     @posts = Kaminari.paginate_array(posts).page(params[:page]).limit(10)
   end
 
+  def rate
+    @posts = Post.all.order('rate DESC').page(params[:page]).per(PER)
+  end
+
+  def infection_control
+    @posts = Post.all.order('infection_control_rate DESC').page(params[:page]).per(PER)
+  end
+
   def timeline
     @posts = current_user.feed.order('updated_at DESC').page(params[:page]).per(PER)
   end

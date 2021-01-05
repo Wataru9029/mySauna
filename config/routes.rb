@@ -28,5 +28,7 @@ Rails.application.routes.draw do
   get "search" => "posts#search"
   get "favorites" => "posts#favorites"
   get "rank" => "posts#rank"
+  get "rate" => "posts#rate"
+  get "infection_control" => "posts#infection_control"
   get "timeline" => "posts#timeline"
 end
