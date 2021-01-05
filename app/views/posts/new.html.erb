@@ -36,6 +36,11 @@
                     <%= f.text_field :site_url, autofocus: true, autocomplete: "site_url", class: "form-control" %>
                 </div>
 
+                <div class="form-group">
+                    <%= f.label :rate %>　<span class="text-danger">*必須(1~5で入力してください)</span><br />
+                    <%= f.text_field :rate, autofocus: true, autocomplete: "rate", class: "form-control" %>
+                </div>
+
                 <div class="actions">
                     <%= f.submit "編集", class: "btn btn-info" %>
                 </div>
