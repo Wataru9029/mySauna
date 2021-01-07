@@ -11,6 +11,17 @@ class CommentsController < ApplicationController
     redirect_to root_url
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @post = Post.find(params[:id])
+    if @comment.user_id == current_user.id && @comment.destroy
+        flash[:info] = "コメントが削除されました！"
+    else
+        flash[:danger] = "コメント削除に失敗しました！"
+    end
+    redirect_to root_url
+  end
+
   private
   def comment_params
     params.require(:comment).permit(:content, :post_id)
