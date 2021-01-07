@@ -38,6 +38,12 @@
                         <small>by: <%= link_to @post.user.name, user_path(@post.user_id), class: "text-muted" %></small>
                         <br>
                         <small class="text-muted"><%= l c.updated_at %></small>
+                        <br>
+                        <% if c.user_id == current_user.id %>
+                            <div class="comment-delete-btn text-right">
+                                <%= link_to "削除", post_comment_path(@post, c), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-sm btn-outline-danger" %>
+                            </div>
+                        <% end %>
                         <hr>
                     </div>
                 <% end %>
