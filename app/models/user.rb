@@ -21,6 +21,7 @@ class User < ApplicationRecord
     find_or_create_by!(email: "guest@com") do |user|
       user.name = "ゲストユーザー"
       user.password = SecureRandom.urlsafe_base64
+      user.image = File.open('./app/assets/images/saunner.jpeg')
     end
   end
 
