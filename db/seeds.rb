@@ -2,7 +2,8 @@
     User.create!(
         name: "サウナー♯#{n}",
         email: "email♯#{n}@gmail.com",
-        password: "password"
+        password: "password",
+        image: File.open('./app/assets/images/saunner.jpeg')
     )
 end
 
@@ -10,7 +11,9 @@ User.create!(
     name: "管理ユーザー",
     email: "admin@gmail.com",
     admin: true,
-    password: ENV["ADMIN_PASSWORD"]
+    password: ENV["ADMIN_PASSWORD"],
+    introduction: "管理ユーザーです。",
+    image: File.open('./app/assets/images/admin.jpeg')
 )
 
 Post.create!(
@@ -20,7 +23,8 @@ Post.create!(
     site_url: "https://www.skyspa.co.jp",
     rate: 5,
     infection_control_rate: 4,
-    user_id: 50
+    user_id: 50,
+    image: File.open('./app/assets/images/skyspa.jpeg')
 )
 
 Post.create!(
@@ -30,7 +34,8 @@ Post.create!(
     site_url: "https://www.saunahokuou.com",
     rate: 5,
     infection_control_rate: 4,
-    user_id: 49
+    user_id: 49,
+    image: File.open('./app/assets/images/hokuou.jpeg')
 )
 
 Post.create!(
@@ -40,7 +45,8 @@ Post.create!(
     site_url: "https://www.yukemurinosato.com/tsunashima",
     rate: 4,
     infection_control_rate: 4,
-    user_id: 48
+    user_id: 48,
+    image: File.open('./app/assets/images/yukemuri.jpeg')
 )
 
 Post.create!(
@@ -50,7 +56,8 @@ Post.create!(
     site_url: "https://rakuspa.com",
     rate: 4,
     infection_control_rate: 3,
-    user_id: 47
+    user_id: 47,
+    image: File.open('./app/assets/images/rakuspa.jpeg')
 )
 
 Post.create!(
@@ -60,7 +67,8 @@ Post.create!(
     site_url: "https://spa-tokyo.net/z-k-k-y-sp/index.html",
     rate: 2,
     infection_control_rate: 1,
-    user_id: 46
+    user_id: 46,
+    image: File.open('./app/assets/images/tachibanayu.jpeg')
 )
 
 Post.create!(
@@ -70,7 +78,8 @@ Post.create!(
     site_url: "http://ofuronokuni.co.jp/",
     rate: 5,
     infection_control_rate: 3,
-    user_id: 45
+    user_id: 45,
+    image: File.open('./app/assets/images/ofuronokuni.jpeg')
 )
 
 Post.create!(
@@ -80,7 +89,8 @@ Post.create!(
     site_url: "https://k-o-i.jp/koten/asahiyu-1",
     rate: 3,
     infection_control_rate: 2,
-    user_id: 44
+    user_id: 44,
+    image: File.open('./app/assets/images/asahiyu.jpeg')
 )
 
 Post.create!(
@@ -90,7 +100,8 @@ Post.create!(
     site_url: "https://information.konamisportsclub.jp/ksc/004070",
     rate: 3,
     infection_control_rate: 3,
-    user_id: 43
+    user_id: 43,
+    image: File.open('./app/assets/images/konami_musashikosugi.jpeg')
 )
 
 Post.create!(
@@ -100,7 +111,8 @@ Post.create!(
     site_url: "http://www.shiraku.jp",
     rate: 4,
     infection_control_rate: 3,
-    user_id: 42
+    user_id: 42,
+    image: File.open('./app/assets/images/shirakunoyu.jpeg')
 )
 
 Post.create!(
@@ -110,5 +122,6 @@ Post.create!(
     site_url: "https://www.imaiyu.com",
     rate: 4,
     infection_control_rate: 3,
-    user_id: 41
+    user_id: 41,
+    image: File.open('./app/assets/images/imaiyu.jpeg')
 )
