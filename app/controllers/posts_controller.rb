@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search, :rank, :rate, :infection_control]
-  before_action :correct_user, only: [:edit, :update, :update]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
 
   def index
@@ -27,7 +27,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(user_id: current_user.id)
     if @post.update_attributes(post_params)
-      flash[:info] = "新規記事が投稿されました！"
+      flash[:notice] = "新規記事が投稿されました！"
       redirect_to @post
     else
       render 'new'
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.user_id == current_user.id && @post.update_attributes(post_params)
-      flash[:info] = "記事が編集されました！"
+      flash[:notice] = "記事が編集されました！"
       redirect_to @post
     else
       render 'edit'
@@ -51,7 +51,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     if @post.user_id == current_user.id && @post.destroy
-      flash[:danger] = "記事が削除されました！"
+      flash[:alert] = "記事が削除されました！"
     end
     redirect_to root_url
   end
