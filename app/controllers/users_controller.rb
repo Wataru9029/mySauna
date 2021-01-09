@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      flash[:info] = "プロフィールが更新されました！"
+      flash[:notice] = "プロフィールが更新されました！"
       redirect_to @user
     else
       render 'edit'
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   def correct_user
     user = User.find(params[:id])
     unless current_user && current_user == user
-      flash[:danger] = "権限がありません！"
+      flash[:alert] = "権限がありません！"
       redirect_to(root_url)
     end
   end

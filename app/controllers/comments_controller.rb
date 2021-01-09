@@ -4,9 +4,9 @@ class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.new(comment_params)
     if @comment.save
-        flash[:info] = "新規コメントが投稿されました！"
+        flash[:notice] = "新規コメントが投稿されました！"
     else
-        flash[:danger] = "コメント投稿に失敗しました！"
+        flash[:alert] = "コメント投稿に失敗しました！"
     end
     redirect_to request.referrer || root_url
   end
@@ -15,9 +15,9 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @post = @comment.post
     if @comment.user_id == current_user.id && @comment.destroy
-        flash[:info] = "コメントが削除されました！"
+        flash[:notice] = "コメントが削除されました！"
     else
-        flash[:danger] = "コメント削除に失敗しました！"
+        flash[:alert] = "コメント削除に失敗しました！"
     end
     redirect_to post_url(@post)
   end
