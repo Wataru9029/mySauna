@@ -7,7 +7,7 @@
         <%= render 'posts/tag_list', tag_list: post.tag_list %>
         <div class="card-body">
             <p class="card-text">
-            　  <%= post.description %>
+            　  <%= truncate(post.description, length: 128) %>
                 <% if post.rate %>
                     <p class="card-text">おすすめ度: <%= "⭐️" * post.rate %></p>
                     <hr>
