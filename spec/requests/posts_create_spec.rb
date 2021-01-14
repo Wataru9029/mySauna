@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "サウナ施設一覧ページ", type: :request do
+RSpec.describe "サウナ施設新規作成", type: :request do
   before do
     @user = create(:user)
     @post = create(:post, user: @user)
