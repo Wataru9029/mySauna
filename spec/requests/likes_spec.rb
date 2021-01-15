@@ -37,10 +37,10 @@ RSpec.describe "いいね機能", type: :request do
           post post_likes_path(@post), xhr: true
         }.to change(@user.likes, :count).by(1)
 
-        @like = Like.first
+        like = Like.first
 
         expect{
-          delete post_like_path(@post, @like), xhr: true
+          delete post_like_path(@post, like), xhr: true
         }.to change(@user.likes, :count).by(-1)
       end
     end
