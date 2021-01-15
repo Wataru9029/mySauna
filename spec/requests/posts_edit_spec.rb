@@ -5,6 +5,8 @@ RSpec.describe "サウナ施設編集ページ", type: :request do
     @user = create(:user)
     @other_user = create(:user)
     @post = create(:post, user: @user)
+    @image_path = File.join(Rails.root, 'spec/fixtures/test-post2.jpeg')
+    @image = Rack::Test::UploadedFile.new(@image_path)
   end
 
   context "認可されたユーザーの場合" do
@@ -16,7 +18,8 @@ RSpec.describe "サウナ施設編集ページ", type: :request do
                                          description: "ドラマ「サ道」のロケ地として有名です。",
                                          site_url: "https://www.saunahokuou.com",
                                          rate: 5,
-                                         infection_control_rate: 4 } }
+                                         infection_control_rate: 4,
+                                         image: @image } }
       redirect_to @post
       follow_redirect!
       expect(response).to render_template('posts/show')
@@ -34,7 +37,8 @@ RSpec.describe "サウナ施設編集ページ", type: :request do
                                          description: "ドラマ「サ道」のロケ地として有名です。",
                                          site_url: "https://www.saunahokuou.com",
                                          rate: 5,
-                                         infection_control_rate: 4 } }
+                                         infection_control_rate: 4,
+                                         image: @image} }
       expect(response).to have_http_status "302"
       expect(response).to redirect_to root_url
     end

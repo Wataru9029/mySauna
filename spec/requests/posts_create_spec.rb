@@ -4,6 +4,8 @@ RSpec.describe "サウナ施設新規作成", type: :request do
   before do
     @user = create(:user)
     @post = create(:post, user: @user)
+    @image_path = File.join(Rails.root, 'spec/fixtures/test-post.jpeg')
+    @image = Rack::Test::UploadedFile.new(@image_path)
   end
 
   context "ログイン済みユーザーの場合" do
@@ -24,7 +26,8 @@ RSpec.describe "サウナ施設新規作成", type: :request do
                                            address: "神奈川県横浜市西区高島２丁目１９−１２",
                                            site_url: "https://www.skyspa.co.jp",
                                            rate: 5,
-                                           infection_control_rate: 5 } }
+                                           infection_control_rate: 5,
+                                           image: @image } }
       }.to change(Post, :count).by(1)
       follow_redirect!
       expect(response).to render_template('posts/show')
@@ -37,7 +40,8 @@ RSpec.describe "サウナ施設新規作成", type: :request do
                                            address: "神奈川県横浜市西区高島２丁目１９−１２",
                                            site_url: "https://www.skyspa.co.jp",
                                            rate: 5,
-                                           infection_control_rate: 5 } }
+                                           infection_control_rate: 5,
+                                           image: @image } }
       }.to change(Post, :count).by(0)
       expect(response).to render_template('posts/new')
     end
