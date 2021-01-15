@@ -4,6 +4,8 @@ RSpec.describe "プロフィール編集", type: :request do
   before do
     @user = create(:user)
     @other_user = create(:user)
+    @image_path = File.join(Rails.root, 'spec/fixtures/test-user.jpeg')
+    @image = Rack::Test::UploadedFile.new(@image_path)
   end
 
   context "認可されたユーザーの場合" do
@@ -12,7 +14,8 @@ RSpec.describe "プロフィール編集", type: :request do
       get edit_user_path(@user)
       patch user_path, params: { user: { name: "Example User",
                                          email: "user@example.com",
-                                         introduction: "初めまして！" } }
+                                         introduction: "初めまして！",
+                                         mage: @image } }
       redirect_to @user
       follow_redirect!
       expect(response).to render_template('users/show')
@@ -26,7 +29,8 @@ RSpec.describe "プロフィール編集", type: :request do
       expect(response).to redirect_to new_user_session_path
       patch user_path, params: { user: { name: "Example User",
                                          email: "user@example.com",
-                                         introduction: "初めまして！" } }
+                                         introduction: "初めまして！",
+                                         mage: @image } }
       expect(response).to have_http_status "302"
       expect(response).to redirect_to new_user_session_path
     end
