@@ -5,5 +5,9 @@ FactoryBot.define do
         password { "password" }
         password_confirmation { "password" }
         introduction { "新米サウナーです！" }
+        # テスト用にadmin属性を付与する
+        trait :admin do
+            admin { true }
+        end
     end
 end
