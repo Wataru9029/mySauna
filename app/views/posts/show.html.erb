@@ -32,8 +32,8 @@
                 <% end %>
                 <h5 class="text-center text-muted mt-5 mb-3">コメント一覧(<%= @comments.count %>)</h5>
                 <% @comments.each do |c| %>
-                    <div>
-                        <%= c.content %>
+                    <div id="comment-<%= c.id %>">
+                        <span><%= c.content %></span>
                         <br>
                         <small>by: <%= link_to @post.user.name, user_path(@post.user_id), class: "text-muted" %></small>
                         <br>

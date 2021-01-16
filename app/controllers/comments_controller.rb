@@ -2,8 +2,9 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @comment = current_user.comments.new(comment_params)
-    if @comment.save
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.build(user_id: current_user.id, content: params[:comment][:content])
+    if !@post.nil? && @comment.save
         flash[:notice] = "新規コメントが投稿されました！"
     else
         flash[:alert] = "コメント投稿に失敗しました！"
