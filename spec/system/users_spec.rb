@@ -44,15 +44,20 @@ RSpec.describe "Users", type: :system do
     end
   end
 
-  describe "プロフィール登録ページ" do
+  describe "プロフィール編集ページ" do
     before do
       sign_in @user
       visit edit_user_path(@user)
     end
 
-    context "ページレイアウト" do
-      it "自己紹介が表示されることを確認" do
-        expect(page).to have_css ".form-group"
+    context "プロフィール情報の更新処理" do
+      it "有効な情報で更新できること" do
+        attach_file "user[image]", "#{Rails.root}/spec/fixtures/test-user2.jpeg"
+        fill_in "ユーザー名", with: "熟練サウナー"
+        fill_in "メールアドレス", with: "test@gmail.com"
+        fill_in "プロフィール文", with: "初めまして！"
+        click_button "編集"
+        expect(@user.reload.image.url).to include "test-user2.jpeg"
       end
     end
   end
