@@ -57,7 +57,40 @@
                         <%= f.submit "コメントする", class: "btn btn-info mb-2" %>
                     <% end %>
                 <% end %>
+
+                <% if @post.latitude && @post.longitude %>
+                    <div id="map" class="mt-3"></div>
+                <% end %>
             </div>
         </div>
     </div>
 </main>
+
+<script type="text/javascript">
+  function initMap() {
+    var test ={ lat: <%= @post.latitude %>, lng: <%= @post.longitude %> };
+    var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 15,
+              center: test
+              });
+    var transitLayer = new google.maps.TransitLayer();
+    transitLayer.setMap(map);
+
+    var contentString = '住所：<%= @post.address %>';
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+
+    var marker = new google.maps.Marker({
+                  position: test,
+                  map: map,
+                  title: contentString
+                 });
+
+     marker.addListener('click', function() {
+       infowindow.open(map, marker);
+     });
+  }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API'] %>&callback=initMap" async defer></script>
