@@ -1,0 +1,7 @@
+<%= form_for [post, comment] do |f| %>
+  <div class="form-group">
+      <%= f.text_field :content, class: "form-control", id: "commentForm" %>
+      <%= f.hidden_field :post_id, value: post.id %>
+  </div>
+  <%= f.submit "コメントする", class: "btn btn-info mb-2" %>
+<% end %>
