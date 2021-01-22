@@ -35,7 +35,7 @@
                     <div id="comment-<%= c.id %>">
                         <span><%= c.content %></span>
                         <br>
-                        <small>by: <%= link_to @post.user.name, user_path(@post.user_id), class: "text-muted" %></small>
+                        <small>by: <%= link_to c.user.name, user_path(c.user_id), class: "text-muted" %></small>
                         <br>
                         <small class="text-muted"><%= l c.updated_at %></small>
                         <br>
