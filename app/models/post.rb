@@ -1,6 +1,4 @@
 class Post < ApplicationRecord
-  acts_as_taggable
-
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
@@ -20,6 +18,10 @@ class Post < ApplicationRecord
     less_than_or_equal_to: 5,
     greater_than_or_equal_to: 1
   }, if: Proc.new { |post| post.infection_control_rate.present? }
+
+  acts_as_taggable
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 
   def self.search(search)
     return Post.all unless search
