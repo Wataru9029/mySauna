@@ -10,17 +10,17 @@
 # Cop supports --auto-correct.
 # Configuration parameters: TreatCommentsAsGroupSeparators, ConsiderPunctuation, Include.
 # Include: **/*.gemfile, **/Gemfile, **/gems.rb
-Bundler/OrderedGems:
-  Exclude:
-    - 'Gemfile'
+# Bundler/OrderedGems:
+#   Exclude:
+#     - 'Gemfile'
 
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, IndentationWidth.
 # SupportedStyles: outdent, indent
-Layout/AccessModifierIndentation:
-  Exclude:
-    - 'app/controllers/application_controller.rb'
+# Layout/AccessModifierIndentation:
+#   Exclude:
+#     - 'app/controllers/application_controller.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -32,46 +32,46 @@ Layout/BlockAlignment:
 
 # Offense count: 12
 # Cop supports --auto-correct.
-Layout/ClosingParenthesisIndentation:
-  Exclude:
-    - 'db/seeds.rb'
+# Layout/ClosingParenthesisIndentation:
+#   Exclude:
+#     - 'db/seeds.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
-Layout/EmptyLineAfterGuardClause:
-  Exclude:
-    - 'app/models/post.rb'
+# Layout/EmptyLineAfterGuardClause:
+#   Exclude:
+#     - 'app/models/post.rb'
 
 # Offense count: 2
 # Cop supports --auto-correct.
-Layout/EmptyLines:
-  Exclude:
-    - 'app/controllers/posts_controller.rb'
-    - 'db/migrate/20201218104504_devise_create_users.rb'
+# Layout/EmptyLines:
+#   Exclude:
+#     - 'app/controllers/posts_controller.rb'
+#     - 'db/migrate/20201218104504_devise_create_users.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: around, only_before
-Layout/EmptyLinesAroundAccessModifier:
-  Exclude:
-    - 'app/controllers/comments_controller.rb'
+# Layout/EmptyLinesAroundAccessModifier:
+#   Exclude:
+#     - 'app/controllers/comments_controller.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: empty_lines, no_empty_lines
-Layout/EmptyLinesAroundBlockBody:
-  Exclude:
-    - 'config/initializers/rails_admin.rb'
+# Layout/EmptyLinesAroundBlockBody:
+#   Exclude:
+#     - 'config/initializers/rails_admin.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: empty_lines, empty_lines_except_namespace, empty_lines_special, no_empty_lines, beginning_only, ending_only
-Layout/EmptyLinesAroundClassBody:
-  Exclude:
-    - 'test/controllers/users_controller_test.rb'
+# Layout/EmptyLinesAroundClassBody:
+#   Exclude:
+#     - 'test/controllers/users_controller_test.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -84,17 +84,17 @@ Layout/EndAlignment:
 # Offense count: 4
 # Cop supports --auto-correct.
 # Configuration parameters: AllowForAlignment, AllowBeforeTrailingComments, ForceEqualSignAlignment.
-Layout/ExtraSpacing:
-  Exclude:
-    - 'config/initializers/geocoder.rb'
+# Layout/ExtraSpacing:
+#   Exclude:
+#     - 'config/initializers/geocoder.rb'
 
 # Offense count: 12
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, IndentationWidth.
 # SupportedStyles: consistent, consistent_relative_to_receiver, special_for_inner_method_call, special_for_inner_method_call_in_parentheses
-Layout/FirstArgumentIndentation:
-  Exclude:
-    - 'db/seeds.rb'
+# Layout/FirstArgumentIndentation:
+#   Exclude:
+#     - 'db/seeds.rb'
 
 # Offense count: 3
 # Cop supports --auto-correct.
@@ -126,9 +126,9 @@ Layout/MultilineBlockLayout:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-Layout/SpaceAfterComma:
-  Exclude:
-    - 'app/controllers/posts_controller.rb'
+# Layout/SpaceAfterComma:
+#   Exclude:
+#     - 'app/controllers/posts_controller.rb'
 
 # Offense count: 5
 # Cop supports --auto-correct.
@@ -145,19 +145,19 @@ Layout/SpaceBeforeBlockBraces:
 # Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBrackets.
 # SupportedStyles: space, no_space, compact
 # SupportedStylesForEmptyBrackets: space, no_space
-Layout/SpaceInsideArrayLiteralBrackets:
-  Exclude:
-    - 'config/environments/production.rb'
+# Layout/SpaceInsideArrayLiteralBrackets:
+#   Exclude:
+#     - 'config/environments/production.rb'
 
 # Offense count: 4
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBraces, SpaceBeforeBlockParameters.
 # SupportedStyles: space, no_space
 # SupportedStylesForEmptyBraces: space, no_space
-Layout/SpaceInsideBlockBraces:
-  Exclude:
-    - 'app/controllers/posts_controller.rb'
-    - 'spec/factories/user.rb'
+# Layout/SpaceInsideBlockBraces:
+#   Exclude:
+#     - 'app/controllers/posts_controller.rb'
+#     - 'spec/factories/user.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -192,9 +192,9 @@ Lint/UnusedBlockArgument:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-Lint/UriRegexp:
-  Exclude:
-    - 'app/models/post.rb'
+# Lint/UriRegexp:
+#   Exclude:
+#     - 'app/models/post.rb'
 
 # Offense count: 2
 # Configuration parameters: IgnoredMethods, CountRepeatedAttributes.
@@ -219,19 +219,19 @@ Metrics/MethodLength:
 
 # Offense count: 3
 # Cop supports --auto-correct.
-Rails/ActiveRecordAliases:
-  Exclude:
-    - 'app/controllers/posts_controller.rb'
-    - 'app/controllers/users_controller.rb'
+# Rails/ActiveRecordAliases:
+#   Exclude:
+#     - 'app/controllers/posts_controller.rb'
+#     - 'app/controllers/users_controller.rb'
 
 # Offense count: 2
 # Configuration parameters: Database, Include.
 # SupportedDatabases: mysql, postgresql
 # Include: db/migrate/*.rb
-Rails/BulkChangeTable:
-  Exclude:
-    - 'db/migrate/20201218104504_devise_create_users.rb'
-    - 'db/migrate/20210121154245_add_map_info_to_posts.rb'
+# Rails/BulkChangeTable:
+#   Exclude:
+#     - 'db/migrate/20201218104504_devise_create_users.rb'
+#     - 'db/migrate/20210121154245_add_map_info_to_posts.rb'
 
 # Offense count: 7
 # Configuration parameters: EnforcedStyle.
@@ -249,9 +249,9 @@ Rails/FilePath:
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: referer, referrer
-Rails/RequestReferer:
-  Exclude:
-    - 'app/controllers/comments_controller.rb'
+# Rails/RequestReferer:
+#   Exclude:
+#     - 'app/controllers/comments_controller.rb'
 
 # Offense count: 5
 # Configuration parameters: AllowedChars.
@@ -355,16 +355,16 @@ Style/IfUnlessModifier:
 # Offense count: 2
 # Cop supports --auto-correct.
 # Configuration parameters: PreferredDelimiters.
-Style/PercentLiteralDelimiters:
-  Exclude:
-    - 'app/models/post.rb'
-    - 'app/uploaders/image_uploader.rb'
+# Style/PercentLiteralDelimiters:
+#   Exclude:
+#     - 'app/models/post.rb'
+#     - 'app/uploaders/image_uploader.rb'
 
 # Offense count: 2
 # Cop supports --auto-correct.
-Style/Proc:
-  Exclude:
-    - 'app/models/post.rb'
+# Style/Proc:
+#   Exclude:
+#     - 'app/models/post.rb'
 
 # Offense count: 2
 # Cop supports --auto-correct.
@@ -375,15 +375,15 @@ Style/RedundantFetchBlock:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-Style/RedundantInterpolation:
-  Exclude:
-    - 'app/controllers/posts_controller.rb'
+# Style/RedundantInterpolation:
+#   Exclude:
+#     - 'app/controllers/posts_controller.rb'
 
 # Offense count: 4
 # Cop supports --auto-correct.
-Style/RedundantSelf:
-  Exclude:
-    - 'app/models/user.rb'
+# Style/RedundantSelf:
+#   Exclude:
+#     - 'app/models/user.rb'
 
 # Offense count: 2
 # Cop supports --auto-correct.
@@ -412,9 +412,9 @@ Style/SymbolArray:
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyleForMultiline.
 # SupportedStylesForMultiline: comma, consistent_comma, no_comma
-Style/TrailingCommaInArguments:
-  Exclude:
-    - 'config/initializers/geocoder.rb'
+# Style/TrailingCommaInArguments:
+#   Exclude:
+#     - 'config/initializers/geocoder.rb'
 
 # Offense count: 13
 # Cop supports --auto-correct.
