@@ -10,6 +10,7 @@ AllCops:
   Exclude:
     - 'bin/**'
     - 'db/schema.rb'
+    - 'test/**/*'
     - 'vendor/**/*'
 
 # 日本語でのコメントを許可
@@ -18,3 +19,7 @@ AsciiComments:
 
 HashSyntax:
   EnforcedStyle: ruby19
+
+# 「change_table：users、bulk：true」を使用して、マイグレーションの高速化ができる
+Rails/BulkChangeTable:
+  Enabled: false
