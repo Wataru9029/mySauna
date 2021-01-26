@@ -18,7 +18,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # jpg,jpeg,pngしか受け付けない
   def extension_white_list
-    %w(jpg jpeg png)
+    %w[jpg jpeg png]
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
