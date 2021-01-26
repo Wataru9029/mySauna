@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     else
         flash[:alert] = "コメント投稿に失敗しました！"
     end
-    redirect_to request.referrer || root_url
+    redirect_to request.referer || root_url
   end
 
   def destroy
