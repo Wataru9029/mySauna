@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search, :rank, :rate, :infection_control]
   before_action :correct_user, only: [:edit, :update, :destroy]
 
-
   def index
     if params[:tag_name]
       @posts = Post.tagged_with(params[:tag_name].to_s)
