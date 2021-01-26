@@ -14,7 +14,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   # 画像の上限を400pxにする
-  process :resize_to_limit => [400, 400]
+  process resize_to_limit: [400, 400]
 
   # jpg,jpeg,pngしか受け付けない
   def extension_white_list
