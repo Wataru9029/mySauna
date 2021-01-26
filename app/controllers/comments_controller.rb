@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     else
         flash[:alert] = "コメント投稿に失敗しました！"
     end
-    redirect_to request.referrer || root_url
+    redirect_to request.referer || root_url
   end
 
   def destroy
@@ -24,6 +24,7 @@ class CommentsController < ApplicationController
   end
 
   private
+
   def comment_params
     params.require(:comment).permit(:content, :post_id)
   end

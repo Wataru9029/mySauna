@@ -2,10 +2,9 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search, :rank, :rate, :infection_control]
   before_action :correct_user, only: [:edit, :update, :destroy]
 
-
   def index
     if params[:tag_name]
-      @posts = Post.tagged_with("#{params[:tag_name]}")
+      @posts = Post.tagged_with(params[:tag_name].to_s)
     else
       @posts = Post.all
     end
@@ -26,7 +25,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(user_id: current_user.id)
-    if @post.update_attributes(post_params)
+    if @post.update(post_params)
       flash[:notice] = "新規記事が投稿されました！"
       redirect_to @post
     else
@@ -40,7 +39,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.user_id == current_user.id && @post.update_attributes(post_params)
+    if @post.user_id == current_user.id && @post.update(post_params)
       flash[:notice] = "記事が編集されました！"
       redirect_to @post
     else
@@ -68,7 +67,7 @@ class PostsController < ApplicationController
   end
 
   def rank
-    posts = Post.includes(:liked_users).sort {|a,b| b.liked_users.size <=> a.liked_users.size}
+    posts = Post.includes(:liked_users).sort { |a, b| b.liked_users.size <=> a.liked_users.size }
     @posts = Kaminari.paginate_array(posts).page(params[:page]).limit(10)
   end
 
