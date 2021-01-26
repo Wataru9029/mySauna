@@ -26,7 +26,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(user_id: current_user.id)
-    if @post.update_attributes(post_params)
+    if @post.update(post_params)
       flash[:notice] = "新規記事が投稿されました！"
       redirect_to @post
     else
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.user_id == current_user.id && @post.update_attributes(post_params)
+    if @post.user_id == current_user.id && @post.update(post_params)
       flash[:notice] = "記事が編集されました！"
       redirect_to @post
     else
