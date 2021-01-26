@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def index
     if params[:tag_name]
-      @posts = Post.tagged_with("#{params[:tag_name]}")
+      @posts = Post.tagged_with(params[:tag_name].to_s)
     else
       @posts = Post.all
     end
