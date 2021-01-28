@@ -255,11 +255,11 @@ Rails/FilePath:
 
 # Offense count: 5
 # Configuration parameters: AllowedChars.
-Style/AsciiComments:
-  Exclude:
-    - 'config/application.rb'
-    - 'spec/factories/user.rb'
-    - 'spec/system/relationships_spec.rb'
+# Style/AsciiComments:
+#   Exclude:
+#     - 'config/application.rb'
+#     - 'spec/factories/user.rb'
+#     - 'spec/system/relationships_spec.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
