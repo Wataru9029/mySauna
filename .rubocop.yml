@@ -35,3 +35,7 @@ Style/ClassAndModuleChildren:
 # ブロック変数の修正
 Lint/UnusedBlockArgument:
   Enabled: false
+
+# puma設定ファイルの修正
+Style/RedundantFetchBlock:
+  Enabled: false
