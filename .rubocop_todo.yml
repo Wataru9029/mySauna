@@ -285,15 +285,15 @@ Style/BlockDelimiters:
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: nested, compact
-Style/ClassAndModuleChildren:
-  Exclude:
-    - 'app/controllers/users/confirmations_controller.rb'
-    - 'app/controllers/users/omniauth_callbacks_controller.rb'
-    - 'app/controllers/users/passwords_controller.rb'
-    - 'app/controllers/users/registrations_controller.rb'
-    - 'app/controllers/users/sessions_controller.rb'
-    - 'app/controllers/users/unlocks_controller.rb'
-    - 'test/test_helper.rb'
+# Style/ClassAndModuleChildren:
+#   Exclude:
+#     - 'app/controllers/users/confirmations_controller.rb'
+#     - 'app/controllers/users/omniauth_callbacks_controller.rb'
+#     - 'app/controllers/users/passwords_controller.rb'
+#     - 'app/controllers/users/registrations_controller.rb'
+#     - 'app/controllers/users/sessions_controller.rb'
+#     - 'app/controllers/users/unlocks_controller.rb'
+#     - 'test/test_helper.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.

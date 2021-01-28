@@ -27,3 +27,7 @@ Rails/BulkChangeTable:
 # if文の記述法修正
 Style/ConditionalAssignment:
   Enabled: false
+
+# deviseで生成されたコントローラーの修正
+Style/ClassAndModuleChildren:
+  Enabled: false
