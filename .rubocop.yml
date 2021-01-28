@@ -39,3 +39,7 @@ Lint/UnusedBlockArgument:
 # puma設定ファイルの修正
 Style/RedundantFetchBlock:
   Enabled: false
+
+# 条件分岐のリファクタリング
+Style/IfUnlessModifier:
+  Enabled: false

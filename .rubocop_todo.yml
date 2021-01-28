@@ -346,11 +346,11 @@ Style/HashSyntax:
 
 # Offense count: 3
 # Cop supports --auto-correct.
-Style/IfUnlessModifier:
-  Exclude:
-    - 'app/controllers/posts_controller.rb'
-    - 'app/models/user.rb'
-    - 'db/migrate/20201225095532_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb'
+# Style/IfUnlessModifier:
+#   Exclude:
+#     - 'app/controllers/posts_controller.rb'
+#     - 'app/models/user.rb'
+#     - 'db/migrate/20201225095532_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb'
 
 # Offense count: 2
 # Cop supports --auto-correct.

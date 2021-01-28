@@ -49,9 +49,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    if @post.user_id == current_user.id && @post.destroy
-      flash[:alert] = "記事が削除されました！"
-    end
+    flash[:alert] = "記事が削除されました！" if @post.user_id == current_user.id && @post.destroy
     redirect_to root_url
   end
 
