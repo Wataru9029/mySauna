@@ -43,3 +43,7 @@ Style/RedundantFetchBlock:
 # 条件分岐のリファクタリング
 Style/IfUnlessModifier:
   Enabled: false
+
+# テスト用画像ファイルのパス修正
+Rails/FilePath:
+  Enabled: false

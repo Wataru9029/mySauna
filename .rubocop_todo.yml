@@ -236,14 +236,14 @@ Metrics/MethodLength:
 # Offense count: 7
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: slashes, arguments
-Rails/FilePath:
-  Exclude:
-    - 'config/environments/development.rb'
-    - 'spec/requests/posts_create_spec.rb'
-    - 'spec/requests/posts_edit_spec.rb'
-    - 'spec/requests/users_edit_spec.rb'
-    - 'spec/system/posts_spec.rb'
-    - 'spec/system/users_spec.rb'
+# Rails/FilePath:
+#   Exclude:
+#     - 'config/environments/development.rb'
+#     - 'spec/requests/posts_create_spec.rb'
+#     - 'spec/requests/posts_edit_spec.rb'
+#     - 'spec/requests/users_edit_spec.rb'
+#     - 'spec/system/posts_spec.rb'
+#     - 'spec/system/users_spec.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
