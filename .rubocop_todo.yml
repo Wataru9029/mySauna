@@ -172,16 +172,16 @@ Layout/LineLength:
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: final_newline, final_blank_line
-Layout/TrailingEmptyLines:
-  Exclude:
-    - 'Gemfile'
-    - 'app/controllers/application_controller.rb'
-    - 'db/seeds.rb'
-    - 'spec/factories/comments.rb'
-    - 'spec/factories/posts.rb'
-    - 'spec/factories/relationships.rb'
-    - 'spec/factories/user.rb'
-    - 'spec/support/request_spec_helper.rb'
+# Layout/TrailingEmptyLines:
+#   Exclude:
+#     - 'Gemfile'
+#     - 'app/controllers/application_controller.rb'
+#     - 'db/seeds.rb'
+#     - 'spec/factories/comments.rb'
+#     - 'spec/factories/posts.rb'
+#     - 'spec/factories/relationships.rb'
+#     - 'spec/factories/user.rb'
+#     - 'spec/support/request_spec_helper.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
