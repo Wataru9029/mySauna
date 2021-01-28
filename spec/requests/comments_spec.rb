@@ -14,17 +14,17 @@ RSpec.describe "コメント機能", type: :request do
         sign_in @user
       end
 
-        it "有効な内容のコメントの作成ができること" do
-          expect { post post_comments_path(@post), params: { post_id: @post.id,
-                                                             comment: { content: "最高です！" } }
-          }.to change(@post.comments, :count).by(1)
-        end
+      it "有効な内容のコメントの作成ができること" do
+        expect { post post_comments_path(@post), params: { post_id: @post.id,
+                                                           comment: { content: "最高です！" } }
+        }.to change(@post.comments, :count).by(1)
+      end
 
-        it "無効な内容のコメントの作成ができないこと" do
-          expect { post post_comments_path(@post), params: { post_id: @post.id,
-                                                             comment: { content: "" } }
-          }.not_to change(@post.comments, :count)
-        end
+      it "無効な内容のコメントの作成ができないこと" do
+        expect { post post_comments_path(@post), params: { post_id: @post.id,
+                                                           comment: { content: "" } }
+        }.not_to change(@post.comments, :count)
+      end
     end
 
     context "ログインしていない場合" do
