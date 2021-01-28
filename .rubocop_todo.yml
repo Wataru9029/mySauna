@@ -263,9 +263,9 @@ Rails/FilePath:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-Style/BlockComments:
-  Exclude:
-    - 'spec/spec_helper.rb'
+# Style/BlockComments:
+#   Exclude:
+#     - 'spec/spec_helper.rb'
 
 # Offense count: 11
 # Cop supports --auto-correct.
