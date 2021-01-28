@@ -164,9 +164,9 @@ Layout/LineLength:
 # Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBraces.
 # SupportedStyles: space, no_space, compact
 # SupportedStylesForEmptyBraces: space, no_space
-Layout/SpaceInsideHashLiteralBraces:
-  Exclude:
-    - 'spec/requests/posts_edit_spec.rb'
+# Layout/SpaceInsideHashLiteralBraces:
+#   Exclude:
+#     - 'spec/requests/posts_edit_spec.rb'
 
 # Offense count: 8
 # Cop supports --auto-correct.

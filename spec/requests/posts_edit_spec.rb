@@ -38,7 +38,7 @@ RSpec.describe "サウナ施設編集ページ", type: :request do
                                          site_url: "https://www.saunahokuou.com",
                                          rate: 5,
                                          infection_control_rate: 4,
-                                         image: @image} }
+                                         image: @image } }
       expect(response).to have_http_status "302"
       expect(response).to redirect_to root_url
     end
