@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :liked_posts, through: :likes, source: :post
   has_many :relationships, dependent: :destroy
   has_many :followings, through: :relationships, source: :follow
-  has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id', dependent: :destroy
+  has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id', inverse_of: 'user', dependent: :destroy
   has_many :followers, through: :reverse_of_relationships, source: :user
 
   mount_uploader :image, ImageUploader

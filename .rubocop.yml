@@ -71,3 +71,11 @@ Metrics/AbcSize:
 Layout/LineLength:
   Max: 154
 
+Metrics/BlockLength:
+  Max: 90
+
+Metrics/CyclomaticComplexity:
+  Max: 8
+
+Metrics/MethodLength:
+  Max: 13
