@@ -341,8 +341,8 @@ Style/FrozenStringLiteralComment:
 # Cop supports --auto-correct.
 # Configuration parameters: UseHashRocketsWithSymbolValues, PreferHashRocketsForNonAlnumEndingSymbols.
 # SupportedStyles: ruby19, hash_rockets, no_mixed_keys, ruby19_no_mixed_keys
-Style/HashSyntax:
-  EnforcedStyle: hash_rockets
+# Style/HashSyntax:
+#   EnforcedStyle: hash_rockets
 
 # Offense count: 3
 # Cop supports --auto-correct.
@@ -398,8 +398,8 @@ Style/HashSyntax:
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, ConsistentQuotesInMultiline.
 # SupportedStyles: single_quotes, double_quotes
-Style/StringLiterals:
-  Enabled: false
+# Style/StringLiterals:
+#   Enabled: false
 
 # Offense count: 18
 # Cop supports --auto-correct.

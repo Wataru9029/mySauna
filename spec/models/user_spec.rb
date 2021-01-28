@@ -6,8 +6,8 @@ RSpec.describe User, type: :model do
     @other_user = create(:user)
   end
 
-  context "フォロー機能" do
-    it "フォローとフォロー解除が正常に機能すること" do
+  context 'フォロー機能' do
+    it 'フォローとフォロー解除が正常に機能すること' do
       expect(@user.following?(@other_user)).to be_falsey
       @user.follow(@other_user)
       expect(@user.following?(@other_user)).to be_truthy

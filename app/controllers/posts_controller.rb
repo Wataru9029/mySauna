@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(user_id: current_user.id)
     if @post.update(post_params)
-      flash[:notice] = "新規記事が投稿されました！"
+      flash[:notice] = '新規記事が投稿されました！'
       redirect_to @post
     else
       render 'new'
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.user_id == current_user.id && @post.update(post_params)
-      flash[:notice] = "記事が編集されました！"
+      flash[:notice] = '記事が編集されました！'
       redirect_to @post
     else
       render 'edit'
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    flash[:alert] = "記事が削除されました！" if @post.user_id == current_user.id && @post.destroy
+    flash[:alert] = '記事が削除されました！' if @post.user_id == current_user.id && @post.destroy
     redirect_to root_url
   end
 
@@ -92,7 +92,7 @@ class PostsController < ApplicationController
   def correct_user
     user = Post.find(params[:id]).user
     unless current_user && current_user == user
-      flash[:danger] = "権限がありません！"
+      flash[:danger] = '権限がありません！'
       redirect_to(root_url)
     end
   end

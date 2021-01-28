@@ -18,8 +18,8 @@ class User < ApplicationRecord
   validates :introduction, presence: false, length: { maximum: 255 }
 
   def self.guest
-    find_or_create_by!(email: "guest@com") do |user|
-      user.name = "ゲストユーザー"
+    find_or_create_by!(email: 'guest@com') do |user|
+      user.name = 'ゲストユーザー'
       user.password = SecureRandom.urlsafe_base64
       user.image = File.open('./app/assets/images/saunner.jpeg')
     end
