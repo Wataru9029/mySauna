@@ -76,4 +76,5 @@ gem 'rails_admin'
 gem 'rails-i18n', '~> 5.1'
 gem 'rubocop'
 gem 'rubocop-rails'
+gem 'rubocop-rspec'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
