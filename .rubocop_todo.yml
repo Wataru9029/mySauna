@@ -186,9 +186,9 @@ Layout/TrailingEmptyLines:
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: IgnoreEmptyBlocks, AllowUnusedKeywordArguments.
-Lint/UnusedBlockArgument:
-  Exclude:
-    - 'spec/system/users_spec.rb'
+# Lint/UnusedBlockArgument:
+#   Exclude:
+#     - 'spec/system/users_spec.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.

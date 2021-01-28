@@ -31,3 +31,7 @@ Style/ConditionalAssignment:
 # deviseで生成されたコントローラーの修正
 Style/ClassAndModuleChildren:
   Enabled: false
+
+# ブロック変数の修正
+Lint/UnusedBlockArgument:
+  Enabled: false
