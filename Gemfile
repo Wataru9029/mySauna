@@ -42,7 +42,7 @@ gem 'mini_magick'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem "factory_bot_rails"
+  gem 'factory_bot_rails'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'spring-commands-rspec'
@@ -76,4 +76,5 @@ gem 'rails_admin'
 gem 'rails-i18n', '~> 5.1'
 gem 'rubocop'
 gem 'rubocop-rails'
+gem 'rubocop-rspec'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

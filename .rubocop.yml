@@ -23,3 +23,51 @@ HashSyntax:
 # 「change_table：users、bulk：true」を使用して、マイグレーションの高速化ができる
 Rails/BulkChangeTable:
   Enabled: false
+
+# if文の記述法修正
+Style/ConditionalAssignment:
+  Enabled: false
+
+# deviseで生成されたコントローラーの修正
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# ブロック変数の修正
+Lint/UnusedBlockArgument:
+  Enabled: false
+
+# puma設定ファイルの修正
+Style/RedundantFetchBlock:
+  Enabled: false
+
+# 条件分岐のリファクタリング
+Style/IfUnlessModifier:
+  Enabled: false
+
+# テスト用画像ファイルのパス修正
+Rails/FilePath:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+# 本番環境設定ファイルの修正
+Style/GlobalStdStream:
+  Enabled: false
+
+# シンボルの記述法修正
+Style/SymbolArray:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 29
+
+Layout/LineLength:
+  Max: 154
+

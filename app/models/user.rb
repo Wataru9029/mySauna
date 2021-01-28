@@ -18,8 +18,8 @@ class User < ApplicationRecord
   validates :introduction, presence: false, length: { maximum: 255 }
 
   def self.guest
-    find_or_create_by!(email: "guest@com") do |user|
-      user.name = "ゲストユーザー"
+    find_or_create_by!(email: 'guest@com') do |user|
+      user.name = 'ゲストユーザー'
       user.password = SecureRandom.urlsafe_base64
       user.image = File.open('./app/assets/images/saunner.jpeg')
     end
@@ -30,14 +30,12 @@ class User < ApplicationRecord
   end
 
   def follow(other_user)
-    unless self == other_user
-      relationships.find_or_create_by(follow_id: other_user.id)
-    end
+    relationships.find_or_create_by(follow_id: other_user.id) unless self == other_user
   end
 
   def unfollow(other_user)
     relationship = relationships.find_by(follow_id: other_user.id)
-    relationship.destroy if relationship
+    relationship&.destroy
   end
 
   def following?(other_user)

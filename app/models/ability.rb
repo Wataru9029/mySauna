@@ -4,9 +4,9 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-      if user && user.admin?
-        can :manage, :all
-        can :access, :rails_admin
-      end
+    if user&.admin?
+      can :manage, :all
+      can :access, :rails_admin
+    end
   end
 end

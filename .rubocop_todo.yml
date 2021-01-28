@@ -26,9 +26,9 @@
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyleAlignWith.
 # SupportedStylesAlignWith: either, start_of_block, start_of_line
-Layout/BlockAlignment:
-  Exclude:
-    - 'spec/requests/users_show_spec.rb'
+# Layout/BlockAlignment:
+#   Exclude:
+#     - 'spec/requests/users_show_spec.rb'
 
 # Offense count: 12
 # Cop supports --auto-correct.
@@ -77,9 +77,9 @@ Layout/BlockAlignment:
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyleAlignWith, Severity.
 # SupportedStylesAlignWith: keyword, variable, start_of_line
-Layout/EndAlignment:
-  Exclude:
-    - 'spec/support/request_spec_helper.rb'
+# Layout/EndAlignment:
+#   Exclude:
+#     - 'spec/support/request_spec_helper.rb'
 
 # Offense count: 4
 # Cop supports --auto-correct.
@@ -100,29 +100,29 @@ Layout/EndAlignment:
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: normal, indented_internal_methods
-Layout/IndentationConsistency:
-  Exclude:
-    - 'spec/requests/comments_spec.rb'
-    - 'spec/requests/users_show_spec.rb'
+# Layout/IndentationConsistency:
+#   Exclude:
+#     - 'spec/requests/comments_spec.rb'
+#     - 'spec/requests/users_show_spec.rb'
 
 # Offense count: 42
 # Cop supports --auto-correct.
 # Configuration parameters: Width, IgnoredPatterns.
-Layout/IndentationWidth:
-  Enabled: false
+# Layout/IndentationWidth:
+#   Enabled: false
 
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: AutoCorrect, AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
 # URISchemes: http, https
-Layout/LineLength:
-  Max: 141
+# Layout/LineLength:
+#   Max: 141
 
 # Offense count: 3
 # Cop supports --auto-correct.
-Layout/MultilineBlockLayout:
-  Exclude:
-    - 'spec/requests/comments_spec.rb'
+# Layout/MultilineBlockLayout:
+#   Exclude:
+#     - 'spec/requests/comments_spec.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -135,10 +135,10 @@ Layout/MultilineBlockLayout:
 # Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBraces.
 # SupportedStyles: space, no_space
 # SupportedStylesForEmptyBraces: space, no_space
-Layout/SpaceBeforeBlockBraces:
-  Exclude:
-    - 'spec/requests/likes_spec.rb'
-    - 'spec/requests/relationship_spec.rb'
+# Layout/SpaceBeforeBlockBraces:
+#   Exclude:
+#     - 'spec/requests/likes_spec.rb'
+#     - 'spec/requests/relationship_spec.rb'
 
 # Offense count: 2
 # Cop supports --auto-correct.
@@ -164,31 +164,31 @@ Layout/SpaceBeforeBlockBraces:
 # Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBraces.
 # SupportedStyles: space, no_space, compact
 # SupportedStylesForEmptyBraces: space, no_space
-Layout/SpaceInsideHashLiteralBraces:
-  Exclude:
-    - 'spec/requests/posts_edit_spec.rb'
+# Layout/SpaceInsideHashLiteralBraces:
+#   Exclude:
+#     - 'spec/requests/posts_edit_spec.rb'
 
 # Offense count: 8
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: final_newline, final_blank_line
-Layout/TrailingEmptyLines:
-  Exclude:
-    - 'Gemfile'
-    - 'app/controllers/application_controller.rb'
-    - 'db/seeds.rb'
-    - 'spec/factories/comments.rb'
-    - 'spec/factories/posts.rb'
-    - 'spec/factories/relationships.rb'
-    - 'spec/factories/user.rb'
-    - 'spec/support/request_spec_helper.rb'
+# Layout/TrailingEmptyLines:
+#   Exclude:
+#     - 'Gemfile'
+#     - 'app/controllers/application_controller.rb'
+#     - 'db/seeds.rb'
+#     - 'spec/factories/comments.rb'
+#     - 'spec/factories/posts.rb'
+#     - 'spec/factories/relationships.rb'
+#     - 'spec/factories/user.rb'
+#     - 'spec/support/request_spec_helper.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: IgnoreEmptyBlocks, AllowUnusedKeywordArguments.
-Lint/UnusedBlockArgument:
-  Exclude:
-    - 'spec/system/users_spec.rb'
+# Lint/UnusedBlockArgument:
+#   Exclude:
+#     - 'spec/system/users_spec.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -198,24 +198,24 @@ Lint/UnusedBlockArgument:
 
 # Offense count: 2
 # Configuration parameters: IgnoredMethods, CountRepeatedAttributes.
-Metrics/AbcSize:
-  Max: 29
+# Metrics/AbcSize:
+#   Max: 29
 
 # Offense count: 15
 # Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
 # IgnoredMethods: refine
-Metrics/BlockLength:
-  Max: 90
+# Metrics/BlockLength:
+#   Max: 90
 
 # Offense count: 1
 # Configuration parameters: IgnoredMethods.
-Metrics/CyclomaticComplexity:
-  Max: 8
+# Metrics/CyclomaticComplexity:
+#   Max: 8
 
 # Offense count: 3
 # Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
-Metrics/MethodLength:
-  Max: 13
+# Metrics/MethodLength:
+#   Max: 13
 
 # Offense count: 3
 # Cop supports --auto-correct.
@@ -236,14 +236,14 @@ Metrics/MethodLength:
 # Offense count: 7
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: slashes, arguments
-Rails/FilePath:
-  Exclude:
-    - 'config/environments/development.rb'
-    - 'spec/requests/posts_create_spec.rb'
-    - 'spec/requests/posts_edit_spec.rb'
-    - 'spec/requests/users_edit_spec.rb'
-    - 'spec/system/posts_spec.rb'
-    - 'spec/system/users_spec.rb'
+# Rails/FilePath:
+#   Exclude:
+#     - 'config/environments/development.rb'
+#     - 'spec/requests/posts_create_spec.rb'
+#     - 'spec/requests/posts_edit_spec.rb'
+#     - 'spec/requests/users_edit_spec.rb'
+#     - 'spec/system/posts_spec.rb'
+#     - 'spec/system/users_spec.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -255,17 +255,17 @@ Rails/FilePath:
 
 # Offense count: 5
 # Configuration parameters: AllowedChars.
-Style/AsciiComments:
-  Exclude:
-    - 'config/application.rb'
-    - 'spec/factories/user.rb'
-    - 'spec/system/relationships_spec.rb'
+# Style/AsciiComments:
+#   Exclude:
+#     - 'config/application.rb'
+#     - 'spec/factories/user.rb'
+#     - 'spec/system/relationships_spec.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
-Style/BlockComments:
-  Exclude:
-    - 'spec/spec_helper.rb'
+# Style/BlockComments:
+#   Exclude:
+#     - 'spec/spec_helper.rb'
 
 # Offense count: 11
 # Cop supports --auto-correct.
@@ -274,83 +274,83 @@ Style/BlockComments:
 # ProceduralMethods: benchmark, bm, bmbm, create, each_with_object, measure, new, realtime, tap, with_object
 # FunctionalMethods: let, let!, subject, watch
 # IgnoredMethods: lambda, proc, it
-Style/BlockDelimiters:
-  Exclude:
-    - 'spec/requests/comments_spec.rb'
-    - 'spec/requests/likes_spec.rb'
-    - 'spec/requests/posts_create_spec.rb'
-    - 'spec/requests/relationship_spec.rb'
+# Style/BlockDelimiters:
+#   Exclude:
+#     - 'spec/requests/comments_spec.rb'
+#     - 'spec/requests/likes_spec.rb'
+#     - 'spec/requests/posts_create_spec.rb'
+#     - 'spec/requests/relationship_spec.rb'
 
 # Offense count: 7
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: nested, compact
-Style/ClassAndModuleChildren:
-  Exclude:
-    - 'app/controllers/users/confirmations_controller.rb'
-    - 'app/controllers/users/omniauth_callbacks_controller.rb'
-    - 'app/controllers/users/passwords_controller.rb'
-    - 'app/controllers/users/registrations_controller.rb'
-    - 'app/controllers/users/sessions_controller.rb'
-    - 'app/controllers/users/unlocks_controller.rb'
-    - 'test/test_helper.rb'
+# Style/ClassAndModuleChildren:
+#   Exclude:
+#     - 'app/controllers/users/confirmations_controller.rb'
+#     - 'app/controllers/users/omniauth_callbacks_controller.rb'
+#     - 'app/controllers/users/passwords_controller.rb'
+#     - 'app/controllers/users/registrations_controller.rb'
+#     - 'app/controllers/users/sessions_controller.rb'
+#     - 'app/controllers/users/unlocks_controller.rb'
+#     - 'test/test_helper.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
-Style/ColonMethodCall:
-  Exclude:
-    - 'app/models/post.rb'
+# Style/ColonMethodCall:
+#   Exclude:
+#     - 'app/models/post.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SingleLineConditionsOnly, IncludeTernaryExpressions.
 # SupportedStyles: assign_to_condition, assign_inside_condition
-Style/ConditionalAssignment:
-  Exclude:
-    - 'app/controllers/posts_controller.rb'
+# Style/ConditionalAssignment:
+#   Exclude:
+#     - 'app/controllers/posts_controller.rb'
 
 # Offense count: 33
-Style/Documentation:
-  Enabled: false
+# Style/Documentation:
+#   Enabled: false
 
 # Offense count: 102
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: always, always_true, never
-Style/FrozenStringLiteralComment:
-  Enabled: false
+# Style/FrozenStringLiteralComment:
+#   Enabled: false
 
 # Offense count: 1
 # Cop supports --auto-correct.
-Style/GlobalStdStream:
-  Exclude:
-    - 'config/environments/production.rb'
+# Style/GlobalStdStream:
+#   Exclude:
+#     - 'config/environments/production.rb'
 
 # Offense count: 6
 # Configuration parameters: MinBodyLength.
-Style/GuardClause:
-  Exclude:
-    - 'app/controllers/posts_controller.rb'
-    - 'app/controllers/users_controller.rb'
-    - 'app/models/ability.rb'
-    - 'app/models/user.rb'
-    - 'db/migrate/20201225095531_change_collation_for_tag_names.acts_as_taggable_on_engine.rb'
-    - 'db/migrate/20201225095532_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb'
+# Style/GuardClause:
+#   Exclude:
+#     - 'app/controllers/posts_controller.rb'
+#     - 'app/controllers/users_controller.rb'
+#     - 'app/models/ability.rb'
+#     - 'app/models/user.rb'
+#     - 'db/migrate/20201225095531_change_collation_for_tag_names.acts_as_taggable_on_engine.rb'
+#     - 'db/migrate/20201225095532_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb'
 
 # Offense count: 7
 # Cop supports --auto-correct.
 # Configuration parameters: UseHashRocketsWithSymbolValues, PreferHashRocketsForNonAlnumEndingSymbols.
 # SupportedStyles: ruby19, hash_rockets, no_mixed_keys, ruby19_no_mixed_keys
-Style/HashSyntax:
-  EnforcedStyle: hash_rockets
+# Style/HashSyntax:
+#   EnforcedStyle: hash_rockets
 
 # Offense count: 3
 # Cop supports --auto-correct.
-Style/IfUnlessModifier:
-  Exclude:
-    - 'app/controllers/posts_controller.rb'
-    - 'app/models/user.rb'
-    - 'db/migrate/20201225095532_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb'
+# Style/IfUnlessModifier:
+#   Exclude:
+#     - 'app/controllers/posts_controller.rb'
+#     - 'app/models/user.rb'
+#     - 'db/migrate/20201225095532_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb'
 
 # Offense count: 2
 # Cop supports --auto-correct.
@@ -369,9 +369,9 @@ Style/IfUnlessModifier:
 # Offense count: 2
 # Cop supports --auto-correct.
 # Configuration parameters: SafeForConstants.
-Style/RedundantFetchBlock:
-  Exclude:
-    - 'config/puma.rb'
+# Style/RedundantFetchBlock:
+#   Exclude:
+#     - 'config/puma.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -389,24 +389,24 @@ Style/RedundantFetchBlock:
 # Cop supports --auto-correct.
 # Configuration parameters: ConvertCodeThatCanStartToReturnNil, AllowedMethods.
 # AllowedMethods: present?, blank?, presence, try, try!
-Style/SafeNavigation:
-  Exclude:
-    - 'app/models/ability.rb'
-    - 'app/models/user.rb'
+# Style/SafeNavigation:
+#   Exclude:
+#     - 'app/models/ability.rb'
+#     - 'app/models/user.rb'
 
 # Offense count: 323
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, ConsistentQuotesInMultiline.
 # SupportedStyles: single_quotes, double_quotes
-Style/StringLiterals:
-  Enabled: false
+# Style/StringLiterals:
+#   Enabled: false
 
 # Offense count: 18
 # Cop supports --auto-correct.
 # Configuration parameters: MinSize.
 # SupportedStyles: percent, brackets
-Style/SymbolArray:
-  EnforcedStyle: brackets
+# Style/SymbolArray:
+#   EnforcedStyle: brackets
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -420,5 +420,5 @@ Style/SymbolArray:
 # Cop supports --auto-correct.
 # Configuration parameters: AutoCorrect, AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
 # URISchemes: http, https
-Layout/LineLength:
-  Max: 154
+# Layout/LineLength:
+#   Max: 154

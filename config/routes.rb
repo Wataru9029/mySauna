@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   }
 
   devise_scope :user do
-    get "signup" => "users/registrations#new"
-    get "login" => "users/sessions#new"
-    get "logout" => "users/sessions#destroy"
-    post "users/guest_sign_in" => "users/sessions#new_guest"
+    get 'signup' => 'users/registrations#new'
+    get 'login' => 'users/sessions#new'
+    get 'logout' => 'users/sessions#destroy'
+    post 'users/guest_sign_in' => 'users/sessions#new_guest'
   end
 
   root 'static_pages#home'
@@ -25,10 +25,10 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
   resources :relationships, only: [:create, :destroy]
-  get "search" => "posts#search"
-  get "favorites" => "posts#favorites"
-  get "rank" => "posts#rank"
-  get "rate" => "posts#rate"
-  get "infection_control" => "posts#infection_control"
-  get "timeline" => "posts#timeline"
+  get 'search' => 'posts#search'
+  get 'favorites' => 'posts#favorites'
+  get 'rank' => 'posts#rank'
+  get 'rate' => 'posts#rate'
+  get 'infection_control' => 'posts#infection_control'
+  get 'timeline' => 'posts#timeline'
 end
