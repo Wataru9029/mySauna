@@ -77,9 +77,9 @@
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyleAlignWith, Severity.
 # SupportedStylesAlignWith: keyword, variable, start_of_line
-Layout/EndAlignment:
-  Exclude:
-    - 'spec/support/request_spec_helper.rb'
+# Layout/EndAlignment:
+#   Exclude:
+#     - 'spec/support/request_spec_helper.rb'
 
 # Offense count: 4
 # Cop supports --auto-correct.
