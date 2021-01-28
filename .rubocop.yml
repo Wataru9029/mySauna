@@ -47,3 +47,6 @@ Style/IfUnlessModifier:
 # テスト用画像ファイルのパス修正
 Rails/FilePath:
   Enabled: false
+
+Style/GuardClause:
+  Enabled: false

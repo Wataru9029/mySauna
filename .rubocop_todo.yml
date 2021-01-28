@@ -328,14 +328,14 @@ Style/GlobalStdStream:
 
 # Offense count: 6
 # Configuration parameters: MinBodyLength.
-Style/GuardClause:
-  Exclude:
-    - 'app/controllers/posts_controller.rb'
-    - 'app/controllers/users_controller.rb'
-    - 'app/models/ability.rb'
-    - 'app/models/user.rb'
-    - 'db/migrate/20201225095531_change_collation_for_tag_names.acts_as_taggable_on_engine.rb'
-    - 'db/migrate/20201225095532_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb'
+# Style/GuardClause:
+#   Exclude:
+#     - 'app/controllers/posts_controller.rb'
+#     - 'app/controllers/users_controller.rb'
+#     - 'app/models/ability.rb'
+#     - 'app/models/user.rb'
+#     - 'db/migrate/20201225095531_change_collation_for_tag_names.acts_as_taggable_on_engine.rb'
+#     - 'db/migrate/20201225095532_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb'
 
 # Offense count: 7
 # Cop supports --auto-correct.
