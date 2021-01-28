@@ -64,3 +64,10 @@ Style/Documentation:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Metrics/AbcSize:
+  Max: 29
+
+Layout/LineLength:
+  Max: 154
+

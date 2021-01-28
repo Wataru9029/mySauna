@@ -115,8 +115,8 @@
 # Cop supports --auto-correct.
 # Configuration parameters: AutoCorrect, AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
 # URISchemes: http, https
-Layout/LineLength:
-  Max: 141
+# Layout/LineLength:
+#   Max: 141
 
 # Offense count: 3
 # Cop supports --auto-correct.
@@ -198,24 +198,24 @@ Layout/LineLength:
 
 # Offense count: 2
 # Configuration parameters: IgnoredMethods, CountRepeatedAttributes.
-Metrics/AbcSize:
-  Max: 29
+# Metrics/AbcSize:
+#   Max: 29
 
 # Offense count: 15
 # Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
 # IgnoredMethods: refine
-Metrics/BlockLength:
-  Max: 90
+# Metrics/BlockLength:
+#   Max: 90
 
 # Offense count: 1
 # Configuration parameters: IgnoredMethods.
-Metrics/CyclomaticComplexity:
-  Max: 8
+# Metrics/CyclomaticComplexity:
+#   Max: 8
 
 # Offense count: 3
 # Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
-Metrics/MethodLength:
-  Max: 13
+# Metrics/MethodLength:
+#   Max: 13
 
 # Offense count: 3
 # Cop supports --auto-correct.
@@ -420,5 +420,5 @@ Metrics/MethodLength:
 # Cop supports --auto-correct.
 # Configuration parameters: AutoCorrect, AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
 # URISchemes: http, https
-Layout/LineLength:
-  Max: 154
+# Layout/LineLength:
+#   Max: 154
