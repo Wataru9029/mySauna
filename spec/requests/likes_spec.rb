@@ -33,15 +33,15 @@ RSpec.describe "いいね機能", type: :request do
       end
 
       it "サウナ施設のお気に入り登録&解除が非同期でできること" do
-        expect {
+        expect do
           post post_likes_path(@post), xhr: true
-        }.to change(@user.likes, :count).by(1)
+        end.to change(@user.likes, :count).by(1)
 
         like = Like.first
 
-        expect {
+        expect do
           delete post_like_path(@post, like), xhr: true
-        }.to change(@user.likes, :count).by(-1)
+        end.to change(@user.likes, :count).by(-1)
       end
     end
   end

@@ -20,7 +20,7 @@ RSpec.describe "サウナ施設新規作成", type: :request do
     end
 
     it "有効な施設データで登録できること" do
-      expect {
+      expect do
         post posts_path, params: { post: { title: "スカイスパYOKOHAMA",
                                            description: "サ室は静かで、水風呂と外気浴との導線が完璧。整いイスが多いのも最高です。",
                                            address: "神奈川県横浜市西区高島２丁目１９−１２",
@@ -28,13 +28,13 @@ RSpec.describe "サウナ施設新規作成", type: :request do
                                            rate: 5,
                                            infection_control_rate: 5,
                                            image: @image } }
-      }.to change(Post, :count).by(1)
+      end.to change(Post, :count).by(1)
       follow_redirect!
       expect(response).to render_template('posts/show')
     end
 
     it "無効な施設データで登録できないこと" do
-      expect {
+      expect do
         post posts_path, params: { post: { title: "",
                                            description: "サ室は静かで、水風呂と外気浴との導線が完璧。整いイスが多いのも最高です。",
                                            address: "神奈川県横浜市西区高島２丁目１９−１２",
@@ -42,7 +42,7 @@ RSpec.describe "サウナ施設新規作成", type: :request do
                                            rate: 5,
                                            infection_control_rate: 5,
                                            image: @image } }
-      }.to change(Post, :count).by(0)
+      end.to change(Post, :count).by(0)
       expect(response).to render_template('posts/new')
     end
   end

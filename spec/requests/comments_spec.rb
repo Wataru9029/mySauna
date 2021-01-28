@@ -15,25 +15,25 @@ RSpec.describe "コメント機能", type: :request do
       end
 
       it "有効な内容のコメントの作成ができること" do
-        expect {
+        expect do
           post post_comments_path(@post), params: { post_id: @post.id,
                                                     comment: { content: "最高です！" } }
-        }.to change(@post.comments, :count).by(1)
+        end.to change(@post.comments, :count).by(1)
       end
 
       it "無効な内容のコメントの作成ができないこと" do
-        expect {
+        expect do
           post post_comments_path(@post), params: { post_id: @post.id,
                                                     comment: { content: "" } }
-        }.not_to change(@post.comments, :count)
+        end.not_to change(@post.comments, :count)
       end
     end
 
     context "ログインしていない場合" do
       it "コメントは登録できず、ログインページにリダイレクトすること" do
-        expect {
+        expect do
           post post_comments_path(@post), params: { comment: { content: "" } }
-        }.not_to change(@post.comments, :count)
+        end.not_to change(@post.comments, :count)
         expect(response).to have_http_status "302"
         expect(response).to redirect_to new_user_session_path
       end

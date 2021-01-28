@@ -274,12 +274,12 @@ Style/BlockComments:
 # ProceduralMethods: benchmark, bm, bmbm, create, each_with_object, measure, new, realtime, tap, with_object
 # FunctionalMethods: let, let!, subject, watch
 # IgnoredMethods: lambda, proc, it
-Style/BlockDelimiters:
-  Exclude:
-    - 'spec/requests/comments_spec.rb'
-    - 'spec/requests/likes_spec.rb'
-    - 'spec/requests/posts_create_spec.rb'
-    - 'spec/requests/relationship_spec.rb'
+# Style/BlockDelimiters:
+#   Exclude:
+#     - 'spec/requests/comments_spec.rb'
+#     - 'spec/requests/likes_spec.rb'
+#     - 'spec/requests/posts_create_spec.rb'
+#     - 'spec/requests/relationship_spec.rb'
 
 # Offense count: 7
 # Cop supports --auto-correct.
