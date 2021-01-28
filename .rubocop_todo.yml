@@ -26,9 +26,9 @@
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyleAlignWith.
 # SupportedStylesAlignWith: either, start_of_block, start_of_line
-Layout/BlockAlignment:
-  Exclude:
-    - 'spec/requests/users_show_spec.rb'
+# Layout/BlockAlignment:
+#   Exclude:
+#     - 'spec/requests/users_show_spec.rb'
 
 # Offense count: 12
 # Cop supports --auto-correct.
