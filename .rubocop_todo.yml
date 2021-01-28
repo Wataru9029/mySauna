@@ -322,9 +322,9 @@ Style/FrozenStringLiteralComment:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-Style/GlobalStdStream:
-  Exclude:
-    - 'config/environments/production.rb'
+# Style/GlobalStdStream:
+#   Exclude:
+#     - 'config/environments/production.rb'
 
 # Offense count: 6
 # Configuration parameters: MinBodyLength.

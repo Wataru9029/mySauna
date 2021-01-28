@@ -50,3 +50,7 @@ Rails/FilePath:
 
 Style/GuardClause:
   Enabled: false
+
+# 本番環境設定ファイルの修正
+Style/GlobalStdStream:
+  Enabled: false
