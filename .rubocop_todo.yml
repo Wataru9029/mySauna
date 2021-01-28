@@ -135,10 +135,10 @@ Layout/LineLength:
 # Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBraces.
 # SupportedStyles: space, no_space
 # SupportedStylesForEmptyBraces: space, no_space
-Layout/SpaceBeforeBlockBraces:
-  Exclude:
-    - 'spec/requests/likes_spec.rb'
-    - 'spec/requests/relationship_spec.rb'
+# Layout/SpaceBeforeBlockBraces:
+#   Exclude:
+#     - 'spec/requests/likes_spec.rb'
+#     - 'spec/requests/relationship_spec.rb'
 
 # Offense count: 2
 # Cop supports --auto-correct.

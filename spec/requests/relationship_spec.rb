@@ -12,7 +12,7 @@ RSpec.describe "フォロー機能", type: :request do
     end
 
     it "ユーザーのフォローがで非同期でできること" do
-      expect{
+      expect {
         post relationships_path, xhr: true, params: { relationship: { follow_id: @other_user.id } }
       }.to change(@user.followings, :count).by(1)
     end
@@ -38,14 +38,14 @@ RSpec.describe "フォロー機能", type: :request do
     end
 
     it "createアクションは実行できず、ログインページへリダイレクトする" do
-      expect{
+      expect {
         post relationships_path
       }.not_to change(@user.followings, :count)
       expect(response).to redirect_to new_user_session_path
     end
 
     it "destroyアクションは実行できず、ログインページへリダイレクトする" do
-        expect{
+        expect {
           delete relationship_path(@user)
         }.not_to change(@user.followings, :count)
         expect(response).to redirect_to new_user_session_path
