@@ -45,10 +45,10 @@ RSpec.describe 'フォロー機能', type: :request do
     end
 
     it 'destroyアクションは実行できず、ログインページへリダイレクトする' do
-        expect do
-          delete relationship_path(@user)
-        end.not_to change(@user.followings, :count)
-        expect(response).to redirect_to new_user_session_path
+      expect do
+        delete relationship_path(@user)
+      end.not_to change(@user.followings, :count)
+      expect(response).to redirect_to new_user_session_path
     end
   end
 end

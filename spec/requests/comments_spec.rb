@@ -43,10 +43,10 @@ RSpec.describe 'コメント機能', type: :request do
   describe 'コメント削除' do
     context 'ログインしている場合' do
       context 'コメントを作成したユーザーである場合' do
-          it 'コメントの削除ができること' do
-            sign_in @user
-            expect { delete post_comment_path(@post, @comment) }.to change(@post.comments, :count).by(-1)
-          end
+        it 'コメントの削除ができること' do
+          sign_in @user
+          expect { delete post_comment_path(@post, @comment) }.to change(@post.comments, :count).by(-1)
+        end
       end
     end
 

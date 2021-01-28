@@ -82,25 +82,25 @@ RSpec.describe 'Posts', type: :system do
 
   describe '検索機能' do
     it '常に検索フォームが表示されていることを確認' do
-        visit root_path
-        expect(page).to have_css 'form#post-search'
+      visit root_path
+      expect(page).to have_css 'form#post-search'
     end
   end
 
   describe 'ランキングページ' do
     it '正常に人気サウナが表示されていること' do
-        visit rank_path
-        expect(page).to have_selector 'h3.rank-posts', text: '♨︎ 人気サウナ10選 ♨︎'
+      visit rank_path
+      expect(page).to have_selector 'h3.rank-posts', text: '♨︎ 人気サウナ10選 ♨︎'
     end
 
     it '正常に高評価サウナが表示されていること' do
-        visit rate_path
-        expect(page).to have_selector 'h3.rate-posts', text: '♨︎ おすすめ度の高いサウナ ♨︎'
+      visit rate_path
+      expect(page).to have_selector 'h3.rate-posts', text: '♨︎ おすすめ度の高いサウナ ♨︎'
     end
 
     it '正常に衛生的サウナが表示されていること' do
-        visit infection_control_path
-        expect(page).to have_selector 'h3.infection-control-posts', text: '♨︎ 感染対策度の高いサウナ ♨︎'
+      visit infection_control_path
+      expect(page).to have_selector 'h3.infection-control-posts', text: '♨︎ 感染対策度の高いサウナ ♨︎'
     end
   end
 end

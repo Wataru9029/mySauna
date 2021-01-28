@@ -108,8 +108,8 @@
 # Offense count: 42
 # Cop supports --auto-correct.
 # Configuration parameters: Width, IgnoredPatterns.
-Layout/IndentationWidth:
-  Enabled: false
+# Layout/IndentationWidth:
+#   Enabled: false
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -310,15 +310,15 @@ Metrics/MethodLength:
 #     - 'app/controllers/posts_controller.rb'
 
 # Offense count: 33
-Style/Documentation:
-  Enabled: false
+# Style/Documentation:
+#   Enabled: false
 
 # Offense count: 102
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: always, always_true, never
-Style/FrozenStringLiteralComment:
-  Enabled: false
+# Style/FrozenStringLiteralComment:
+#   Enabled: false
 
 # Offense count: 1
 # Cop supports --auto-correct.
