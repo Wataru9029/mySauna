@@ -23,3 +23,7 @@ HashSyntax:
 # 「change_table：users、bulk：true」を使用して、マイグレーションの高速化ができる
 Rails/BulkChangeTable:
   Enabled: false
+
+# if文の記述法修正
+Style/ConditionalAssignment:
+  Enabled: false
