@@ -54,3 +54,7 @@ Style/GuardClause:
 # 本番環境設定ファイルの修正
 Style/GlobalStdStream:
   Enabled: false
+
+# シンボルの記述法修正
+Style/SymbolArray:
+  Enabled: false
