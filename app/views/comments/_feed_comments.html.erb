@@ -1,22 +1,22 @@
 <h5 class="text-center text-muted mt-5 mb-3">コメント一覧(<%= @comments.count %>)</h5>
 
 <% comments.each do |c| %>
-    <div id="comment-<%= c.id %>">
-        <span><%= c.content %></span>
-        <br>
-        <small>by: <%= link_to c.user.name, user_path(c.user_id), class: "text-muted" %></small>
-        <br>
-        <small class="text-muted"><%= l c.updated_at %></small>
-        <br>
-        <% if c.user_id == current_user.id %>
-            <div class="comment-delete-btn text-right">
-                <%= link_to "削除", post_comment_path(@post, c), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-sm btn-outline-danger" %>
-            </div>
-        <% end %>
-        <hr>
-    </div>
+  <div id="comment-<%= c.id %>">
+    <span><%= c.content %></span>
+    <br>
+    <small>by: <%= link_to c.user.name, user_path(c.user_id), class: "text-muted" %></small>
+    <br>
+    <small class="text-muted"><%= l c.updated_at %></small>
+    <br>
+    <% if c.user_id == current_user.id %>
+      <div class="comment-delete-btn text-right">
+        <%= link_to "削除", post_comment_path(@post, c), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-sm btn-outline-danger" %>
+      </div>
+    <% end %>
+    <hr>
+  </div>
 <% end %>
 
 <% if user_signed_in? %>
-    <%= render 'comments/new_form', post: @post, comment: @comment %>
+  <%= render 'comments/new_form', post: @post, comment: @comment %>
 <% end %>
