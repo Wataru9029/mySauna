@@ -1,8 +1,8 @@
 <h3 class="mt-5 mb-5 text-center">♨︎ <%= @users.count %>人フォロー中 ♨︎</h3>
 
 <main class="container">
-    <div class="row">
-        <%= render 'users/users', users: @users %>
-    </div>
-    <%= paginate @users %>
+  <div class="row">
+    <%= render 'users/users', users: @users %>
+  </div>
+  <%= paginate @users %>
 </main>

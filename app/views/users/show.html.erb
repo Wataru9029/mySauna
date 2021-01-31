@@ -1,33 +1,33 @@
 <main class="container">
-    <div class="row mt-5">
-        <div class="card col-md-6 offset-md-3 mb-5">
-            <h4 class="card-title mt-3 text-center show-user-name"><%= @user.name %></h4>
-            <p class="d-block mx-auto"><%= image_tag @user.image.url unless @user.image.blank? %></p>
-            <div class="card-body">
-                <% if @user.introduction %>
-                    <p class="card-text"><%= @user.introduction %></p>
-                    <hr>
-                <% end %>
-                <p class="card-text">
-                  フォロー数: <%= link_to @user.followings.count, followings_user_path(@user.id), class: "text-dark" %>
-                </p>
-                <hr>
-                <p class="card-text">
-                  フォロワー: <%= link_to @user.followers.count, followers_user_path(@user.id), class: "text-dark" %>
-                </p>
-                <hr>
-                <p class="text-center">
-                <%= render "relationships/follow_button", user: @user %>
-                    <% if current_user == @user %>
-                        <%= link_to "編集", edit_user_path(@user.id), class: "text-muted btn btn-outline-info" %>
-                    <% end %>
-                </p>
-            </div>
-        </div>
-
-        <h3 class="mt-5 mb-5 col-md-6 offset-md-3 text-center user-show-post">♨︎ 投稿したサウナ <%= @user.posts.count %>件♨︎</h3>
-
-        <%= render 'posts/posts', posts: @posts %>
+  <div class="row mt-5">
+    <div class="card col-md-6 offset-md-3 mb-5">
+      <h4 class="card-title mt-3 text-center show-user-name"><%= @user.name %></h4>
+      <p class="d-block mx-auto"><%= image_tag @user.image.url unless @user.image.blank? %></p>
+      <div class="card-body">
+        <% if @user.introduction %>
+          <p class="card-text"><%= @user.introduction %></p>
+          <hr>
+        <% end %>
+        <p class="card-text">
+          フォロー数: <%= link_to @user.followings.count, followings_user_path(@user.id), class: "text-dark" %>
+        </p>
+        <hr>
+        <p class="card-text">
+          フォロワー: <%= link_to @user.followers.count, followers_user_path(@user.id), class: "text-dark" %>
+        </p>
+        <hr>
+        <p class="text-center">
+        <%= render "relationships/follow_button", user: @user %>
+        <% if current_user == @user %>
+          <%= link_to "編集", edit_user_path(@user.id), class: "text-muted btn btn-outline-info" %>
+        <% end %>
+        </p>
+      </div>
     </div>
-    <%= paginate @posts %>
+
+    <h3 class="mt-5 mb-5 col-md-6 offset-md-3 text-center user-show-post">♨︎ 投稿したサウナ <%= @user.posts.count %>件♨︎</h3>
+
+    <%= render 'posts/posts', posts: @posts %>
+  </div>
+  <%= paginate @posts %>
 </main>
