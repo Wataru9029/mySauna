@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
   resources :relationships, only: [:create, :destroy]
+  resources :notifications, only: :index
   get 'search' => 'posts#search'
   get 'favorites' => 'posts#favorites'
   get 'rank' => 'posts#rank'
