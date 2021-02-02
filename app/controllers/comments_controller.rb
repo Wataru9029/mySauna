@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(user_id: current_user.id, content: params[:comment][:content])
     if !@post.nil? && @comment.save
       flash[:notice] = '新規コメントが投稿されました！'
+      @post.create_notification_comment!(current_user, @comment.id)
     else
       flash[:alert] = 'コメント投稿に失敗しました！'
     end

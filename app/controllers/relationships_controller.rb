@@ -4,6 +4,8 @@ class RelationshipsController < ApplicationController
 
   def create
     current_user.follow(@user)
+    @user.create_notification_follow!(current_user)
+    respond_to :js
   end
 
   def destroy
