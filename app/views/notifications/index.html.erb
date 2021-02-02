@@ -1,0 +1,31 @@
+<h3 class="mt-5 mb-5 text-center">通知一覧</h3>
+
+<main class="container">
+  <div class="row">
+    <% unless @notifications.exists? %>
+        <div class="card col-md-8 offset-md-2 mt-5 mb-5 notifications">
+          <% @notifications.each do %>
+            <div class="notification">
+              <div class="notification-text mt-3">
+                <% if notification.action == 'comment' %>
+                  <p><%= link_to "熟練サウナー", user_path(motificaiton.post.user) %>さんが<%= link_to "あなたの投稿", post_path(motificaiton.post) %>にコメントしました</p>
+                  <p class="text-muted">
+                  <%= truncate(notification.post.description, length: 32) %>
+                  </p>
+                <% elsif notification.action == 'like' %>
+                  <p><%= link_to "熟練サウナー", user_path(motificaiton.post.user) %>さんが<%= link_to "あなたの投稿", post_path(motificaiton.post) %>にいいねしました</p>
+                <% elsif notification.action == 'follow' %>
+                  <p><%= link_to "熟練サウナー", user_path(motificaiton.post.user) %>さんがあなたをフォローしました</p>
+                <% end %>　
+                <%= l notification.updated_at, class: "text-right" %>
+              </div>
+            </div>
+            <hr>
+          <% end %>
+        </div>
+    <% else %>
+      <p>通知はありません</p>
+    <% end %>
+  </div>
+  <%= paginate @notifications %>
+</main>
