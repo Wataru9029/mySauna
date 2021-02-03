@@ -41,7 +41,7 @@ RSpec.describe 'サウナ施設新規作成', type: :request do
       it 'コメントによって通知が作成されること' do
         expect do
           post post_comments_path(@other_post), params: { post_id: @other_post.id,
-                                                    comment: { content: '最高です！' } }
+                                                          comment: { content: '最高です！' } }
         end.to change(@other_post.notifications, :count).by(1)
       end
     end
