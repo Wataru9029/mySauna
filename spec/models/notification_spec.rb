@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Notification, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before do
+    @notification = build(:notification)
+  end
+
+  it 'notificationインスタンスが有効であること' do
+    expect(@notification).to be_valid
+  end
 end

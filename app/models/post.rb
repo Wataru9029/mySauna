@@ -32,7 +32,7 @@ class Post < ApplicationRecord
 
   def create_notification_like!(current_user)
     # すでに「いいね」済みか検索
-    temp = Notification.where(["visiter_id = ? and visited_id = ? and post_id = ? and action = ?", current_user.id, user_id, id, 'like'])
+    temp = Notification.where(['visiter_id = ? and visited_id = ? and post_id = ? and action = ?', current_user.id, user_id, id, 'like'])
     # いいねされていない場合のみ、通知を新規作成
     if temp.blank?
       notification = current_user.active_notifications.new(
@@ -50,7 +50,7 @@ class Post < ApplicationRecord
 
   def create_notification_comment!(current_user, comment_id)
     # 自分以外にコメントしている人を全て取得し、全員に通知を送る
-    temp_ids  = Comment.select(:user_id).where(post_id: id).where.not(user_id: current_user.id).distinct
+    temp_ids = Comment.select(:user_id).where(post_id: id).where.not(user_id: current_user.id).distinct
     temp_ids.each do |temp_id|
       save_notification_comment!(current_user, comment_id, temp_id['user_id'])
     end
