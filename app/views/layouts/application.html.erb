@@ -26,6 +26,9 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
+
+    <!-- gon -->
+    <%= include_gon %>
   </head>
 
   <body>
@@ -71,7 +74,9 @@
               </li>
             <% else %>
               <li class="nav-item">
-                <%= link_to "新規投稿", new_post_path, class: 'nav-link my-2' %>
+                <%= link_to map_index_path, class: 'nav-link my-2' do %>
+                  <i class="fas fa-map-marker-alt"></i> マップから探す
+                <% end %>
               </li>
               <li class="nav-item">
                 <%= link_to notifications_path, class: 'nav-link my-2 ml-3' do %>
@@ -92,6 +97,10 @@
                     <% end %>
                   <div class="dropdown-divider"></div>
                   <% end %>
+                <%= link_to new_post_path, class: 'dropdown-item' do %>
+                  <i class="fas fa-pencil-alt"></i> 新規投稿
+                <% end %>
+                <div class="dropdown-divider"></div>
                 <%= link_to "マイページ", user_path(current_user.id), class: 'dropdown-item' %>
                 <%= link_to "タイムライン", timeline_path, class: 'dropdown-item' %>
                 <%= link_to current_user.followings.count.to_s + "フォロー中", followings_user_path(current_user.id), class: 'dropdown-item' %>
@@ -109,6 +118,16 @@
 
     <%= render 'layouts/flash' %>
     <%= yield %>
+
+    <% if user_signed_in? %>
+      <% unless request.path.include?('new') || request.path.include?('edit') %>
+        <p class="post-new-btn" style="display: block;">
+          <%= link_to new_post_path do %>
+            <i class="fas fa-plus"></i>
+          <% end %>
+        </p>
+      <% end %>
+    <% end %>
 
     <footer class="footer text-center mt-5">
       <div class="container">

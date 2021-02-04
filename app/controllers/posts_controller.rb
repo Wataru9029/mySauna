@@ -81,6 +81,10 @@ class PostsController < ApplicationController
     @posts = current_user.feed.order('updated_at DESC').page(params[:page]).per(PER)
   end
 
+  def map_index
+    gon.posts = Post.all
+  end
+
   private
 
   # 記事投稿時に許可する属性
