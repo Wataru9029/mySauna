@@ -32,4 +32,5 @@ Rails.application.routes.draw do
   get 'rate' => 'posts#rate'
   get 'infection_control' => 'posts#infection_control'
   get 'timeline' => 'posts#timeline'
+  get 'map_index' => 'posts#map_index'
 end
