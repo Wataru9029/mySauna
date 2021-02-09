@@ -14,6 +14,11 @@ class RoomsController < ApplicationController
       @messages = @room.messages
       @message = Message.new
       @entries = @room.entries
+      @entries.each do |e|
+        unless e.user.name == current_user.name
+          @otherUser = e.user
+        end
+      end
     else
       redirect_to root_url
     end
