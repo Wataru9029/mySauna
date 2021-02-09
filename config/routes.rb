@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   end
   resources :relationships, only: [:create, :destroy]
   resources :notifications, only: :index
-  resources :messages, :only => [:create]
+  resources :messages, :only => [:create, :destroy]
   resources :rooms, :only => [:create, :show]
   get 'search' => 'posts#search'
   get 'favorites' => 'posts#favorites'

@@ -10,4 +10,10 @@ class MessagesController < ApplicationController
       redirect_to root_url
     end
   end
+
+  def destroy
+    @message = Message.find(params[:id])
+    flash[:alert] = 'メッセージが削除されました！' if current_user.id == @message.user_id && @message.destroy
+    redirect_to "/rooms/#{@message.room_id}"
+  end
 end

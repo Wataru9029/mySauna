@@ -8,6 +8,8 @@
           <% if m.user.name == current_user.name %>
             <p class="text-right">
               <%= m.content %>
+              <br>
+              <%= link_to "削除", message_path(m), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-danger btn-sm" %>
             </p>
             <p class="text-right">
               by <%= link_to m.user.name, user_path(m.user_id), class: "text-muted" %>
