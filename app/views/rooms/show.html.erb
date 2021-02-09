@@ -1,0 +1,41 @@
+<h3 class="mt-5 mb-5 text-center">メッセージ</h3>
+
+<main class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-md-6 mx-auto">
+      <% if @messages.present? %>
+        <% @messages.each do |m| %>
+          <% if m.user.name == current_user.name %>
+            <p class="text-right">
+              <%= m.content %>
+            </p>
+            <p class="text-right">
+              by <%= link_to m.user.name, user_path(m.user_id), class: "text-muted" %>
+            </p>
+          <% else %>
+            <p>
+              <%= m.content %>
+            </p>
+            <p>>
+              by <%= link_to m.user.name, user_path(m.user_id), class: "text-muted" %>
+            </p>
+          <% end %>
+          <hr>
+        <% end %>
+      <% else %>
+        <h4>メッセージはまだありません</h3>
+      <% end %>
+
+      <%= form_for @message do |f| %>
+        <div class="form-group">
+          <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" , :size => 70, class: "form-control" %>
+          <%= f.hidden_field :room_id, :value => @room.id %>
+        </div>
+        <br>
+        <div class="actions">
+          <%= f.submit "投稿する", class: "btn btn-info" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</main>
