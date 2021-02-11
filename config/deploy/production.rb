@@ -59,3 +59,5 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+
+server '35.72.114.35', user: 'mysauna-user', roles: %w{app db web}
