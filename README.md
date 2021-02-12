@@ -72,8 +72,8 @@
 * Rspec(単体・統合)
 * CircleCIにてdocker-composeよりコンテナを構築し、自動テスト
 
-## その他しよう技術
-** Google Maps API
+## その他使用技術
+* Google Maps API
 * 非同期通信(投稿へのいいね、ユーザーのフォロー)
 * コードの自動修正(Rubocop)
 * Githubの活用(プルリクエスト、マージ等)
