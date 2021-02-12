@@ -1,24 +1,83 @@
-# README
+# このサウナで整った！
+サウナ施設の情報を共有したり、地図から登録済みサウナ施設を探せたり、様々な機能を取り揃えたサウナ好きのためのWebアプリケーションです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# URL
+トップページ右上にあるログインボタンをクリックしログイン画面に遷移します。
+「簡単ログイン(閲覧用)」のボタンをクリックすると、フォーム入力することなくログイン可能です。
 
-Things you may want to cover:
+# 制作の背景
+良かったサウナ施設の共有と備忘録のために作成しました。
+施設によっては感染対策が施されていないことがあり、このご時世サウナに行きづらいと感じていたので、星評価を表示できるようにしました。
+また現在地から1番近いサウナを探せるように、"マップから探す機能"を用意しました。
 
-* Ruby version
+# 機能一覧
+## ユーザー機能
+* ユーザー登録・編集・削除(deviseのgemを使用)
+* ゲストログイン
+* プロフィール画像の登録・編集(carrierwaveのgemを使用)
+* 管理者権限のあるユーザーのみ、ユーザー管理可能(rails_adminのgemをしよう)
 
-* System dependencies
+## サウナ施設の投稿機能
+* お気に入りのサウナ施設(施設の写真、名前、住所等)を投稿
+* 一覧表示、詳細表示
+* 地図表示(Google Maps API)
+* タグ付け機能(acts-as-taggable-onのgemを使用)
+* 投稿へのいいね機能(非同期通信)
+* 投稿へのコメント機能
+* サウナ施設の検索機能(施設名・説明文のOR検索)
 
-* Configuration
+## フォロー機能
+* ユーザーのフォロー・フォロー解除(非同期)
+* フォロー中のユーザーとフォロワーの一覧表示
 
-* Database creation
+## メッセージ機能
+* ユーザー同士のメッセージ機能(作成、削除)
 
-* Database initialization
+## 通知機能
+* 以下のタイミングでユーザーに通史を送信
+** 自分の投稿がいいねされた時
+** 自分の投稿にコメントされた時
+** 他ユーザーからフォローされた時
+* 一覧表示
+* 未確認の通知がある場合はマークを表示
 
-* How to run the test suite
+## その他の機能
+* ランキング機能
+* 登録済みサウナ施設をマップから探す機能(Google Maps API)
+* ページネーション機能(kaminari)
+* HTTPS通信(AWS Certificate Manager)
+* レスポンシブ対応
 
-* Services (job queues, cache servers, search engines, etc.)
+# 環境・使用技術
+## フロントエンド
+* HTML/CSS
+* JavaScript, jQuery
+* Bootstrap 4.3.1
 
-* Deployment instructions
+## バックエンド
+* Ruby 2.5.3
+* Ruby on Rails 5.2.2
 
-* ...
+## 開発環境
+* MySQL
+* Docker/docker-compose
+
+## 本番環境
+* AWS(EC2, RDS, VPC, ALB, S3, Route53, ACM)
+* Nginx
+* CircleCIにてdocker-composeよりコンテナを構築し、Capistranoを使って自動デプロイ
+* MariaDB
+
+## テスト
+* Rspec(単体・統合)
+* CircleCIにてdocker-composeよりコンテナを構築し、自動テスト
+
+## その他しよう技術
+** Google Maps API
+* 非同期通信(投稿へのいいね、ユーザーのフォロー)
+* コードの自動修正(Rubocop)
+* Githubの活用(プルリクエスト、マージ等)
+
+# インフラ構成図
+
+# ER図
