@@ -81,3 +81,4 @@
 # インフラ構成図
 
 # ER図
+<img style="max-width:100%;" src="app/assets/images/sreadme_infrastructure.png>
