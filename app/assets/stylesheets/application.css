@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "メイリオ", sans-serif;
+  font-weight: bold !important;
+  font-style: oblique 40deg;
+}
 .flash {
     text-align: center;
     color: #fff;
