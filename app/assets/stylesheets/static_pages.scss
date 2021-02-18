@@ -11,8 +11,12 @@
   height: 360px;
   z-index: 0;
 
+  h2 {
+    padding-top: 160px;
+    color: #fff;
+  }
+
   .search-form {
-    padding-top: 180px;
     text-align: center;
   }
 }

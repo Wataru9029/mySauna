@@ -1,4 +1,5 @@
 <div class="search-top">
+  <h2 class="text-center">全国のサウナを探そう</h2>
   <%= form_tag(search_path,:method => 'get', class: 'search-form') do %>
     <%= text_field_tag :title_or_description_cont, '', placeholder: "サウナを検索する" %>
     <%= submit_tag '検索', :name => nil, class: "btn btn-light btn-sm my-1 my-sm-0" %>
