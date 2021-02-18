@@ -1,6 +1,33 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.search-top {
+  background-image: image-url('top-img.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  height: 360px;
+  z-index: 0;
+
+  .search-form {
+    padding-top: 180px;
+    text-align: center;
+  }
+}
+
+.search-top ::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  background: inherit;
+  filter: blur(2px);
+  z-index: -1;
+}
 
 .pagination {
   justify-content: center;
