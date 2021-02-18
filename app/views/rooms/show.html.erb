@@ -25,20 +25,19 @@
           <hr>
         <% end %>
       <% else %>
-        <h4>メッセージはまだありません</h3>
+        <p>メッセージはまだありません！</p>
+        <hr>
       <% end %>
 
       <%= form_for @message do |f| %>
-        <div class="form-group">
-          <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" , :size => 70, class: "form-control" %>
+        <div class="form-group mt-5">
+          <%= f.text_field :content, :placeholder => "メッセージを入力して下さい", :size => 70, class: "form-control" %>
           <%= f.hidden_field :room_id, :value => @room.id %>
         </div>
-        <br>
         <div class="actions">
           <%= f.submit "投稿する", class: "btn btn-info" %>
         </div>
       <% end %>
-      <%= link_to "ユーザーページに戻る", user_path(@otherUser), class: "btn btn-outline-info" %>
     </div>
   </div>
 </main>
