@@ -83,7 +83,7 @@ RSpec.describe 'Posts', type: :system do
   describe '検索機能' do
     it '常に検索フォームが表示されていることを確認' do
       visit root_path
-      expect(page).to have_css 'form#post-search'
+      expect(page).to have_css 'form.search-form'
     end
   end
 
