@@ -65,6 +65,7 @@
 ## 本番環境
 * AWS(EC2, RDS, VPC, ALB, S3, Route53, ACM)
 * Nginx
+* Puma
 * CircleCIにてdocker-composeよりコンテナを構築し、Capistranoを使って自動デプロイ
 * MariaDB
 
