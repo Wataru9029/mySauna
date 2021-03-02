@@ -81,5 +81,3 @@
 
 # インフラ構成図
 <img style="max-width:100%;" alt="readme_infrastructure" src="https://user-images.githubusercontent.com/43335573/107848024-cc01f580-6e33-11eb-916a-62991825b94f.png">
-
-# ER図
