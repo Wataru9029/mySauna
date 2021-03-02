@@ -1,8 +1,12 @@
-<h3 class="mt-5 mb-2 text-center">♨︎ <%= @users.count %>フォロワー ♨︎</h3>
+<h3 class="mt-5 mb-5 text-center">♨︎ <%= @users.count %>フォロワー ♨︎</h3>
 
 <main class="container">
   <div class="row">
-    <%= render 'users/users', users: @users %>
+    <% if @users.exists? %>
+      <%= render 'users/users', users: @users %>
+    <% else %>
+      <p class="mx-auto">フォロワーはまだいません！</p>
+    <% end %>
   </div>
   <%= paginate @users %>
 </main>
