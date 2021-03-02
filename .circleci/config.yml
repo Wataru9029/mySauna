@@ -64,3 +64,14 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
+
+  deploy:
+    executor: default
+    steps:
+      - setup
+      - add_ssh_keys:
+          fingerprints:
+            - "33:33:a8:e3:91:b6:5d:59:10:1d:0f:dc:a6:fe:28:db" # GitHubのUserキーを使用
+      - deploy:
+          name: Capistrano deploy
+          command: bundle exec cap production deploy
