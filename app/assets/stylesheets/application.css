@@ -18,6 +18,11 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold !important;
   font-style: oblique 40deg;
 }
+
+main {
+  min-height: 600px;
+}
+
 .flash {
     text-align: center;
     color: #fff;

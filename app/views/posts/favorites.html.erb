@@ -1,8 +1,12 @@
-<h3 class="mt-5 mb-5 text-center">♨︎ お気に入りサウナ: <%= current_user.liked_posts.count %>件 ♨︎</h3>
+<h3 class="mt-5 mb-5 text-center">♨︎ お気に入りサウナ ♨︎</h3>
 
 <main class="container">
-  <div class="row">
-    <%= render 'posts/posts', posts: @posts %>
+  <div class="row"> 
+    <% if @posts.exists? %>
+      <%= render 'posts/posts', posts: @posts %>
+    <% else %>
+      <p class="mx-auto">お気に入りサウナはまだありません！</p>
+    <% end %>
   </div>
   <%= paginate @posts %>
 </main>
