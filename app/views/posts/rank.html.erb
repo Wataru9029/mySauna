@@ -1,7 +1,8 @@
-<h3 class="mt-5 mb-5 text-center rank-posts">♨︎ 人気サウナ10選 ♨︎</h3>
+<h3 class="mt-5 mb-5 text-center rank-posts">♨︎ 人気サウナ ♨︎</h3>
 
 <main class="container">
   <div class="row">
     <%= render 'posts/posts', posts: @posts %>
   </div>
+  <%= paginate @posts %>
 </main>
