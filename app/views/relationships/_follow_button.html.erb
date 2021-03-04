@@ -1,7 +1,7 @@
 <% if user_signed_in? && current_user != user %>
   <div id="follow-btn-<%= user.id %>">
     <p class="card-text">
-      フォロー数: <%= link_to @user.followings.count, followings_user_path(@user.id), class: "text-dark" %>
+      フォロー: <%= link_to @user.followings.count, followings_user_path(@user.id), class: "text-dark" %>
     </p>
     <hr>
     <p class="card-text">
