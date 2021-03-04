@@ -66,7 +66,7 @@ class PostsController < ApplicationController
 
   def rank
     posts = Post.includes(:liked_users).sort { |a, b| b.liked_users.size <=> a.liked_users.size }
-    @posts = Kaminari.paginate_array(posts).page(params[:page]).limit(10)
+    @posts = Kaminari.paginate_array(posts).page(params[:page]).per(PER)
   end
 
   def rate
