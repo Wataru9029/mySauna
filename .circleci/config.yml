@@ -6,7 +6,7 @@ executors:
   default:
     working_directory: ~/repo
     docker:
-      - image: circleci/ruby:2.6.3-stretch-node
+      - image: circleci/ruby:2.5.3-node-browsers
       - image: circleci/mysql:5.7
     environment:
       - MYSQL_USER: root
