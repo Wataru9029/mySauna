@@ -62,6 +62,11 @@
                 <i class="fas fa-bath"></i>  感染対策ランキング
               <% end %>
             </li>
+            <li class="nav-item">
+              <%= link_to map_index_path, class: 'nav-link my-2' do %>
+                <i class="fas fa-map-marker-alt"></i> マップから探す
+              <% end %>
+            </li>
             <% unless user_signed_in? %>
               <li class="nav-item">
                 <%= link_to "ログイン", login_path, class: 'nav-link my-2' %>
@@ -73,11 +78,6 @@
                 <%= link_to "簡単ログイン", users_guest_sign_in_path, method: :post, class: 'nav-link btn btn-success my-1 my-sm-0' %>
               </li>
             <% else %>
-              <li class="nav-item">
-                <%= link_to map_index_path, class: 'nav-link my-2' do %>
-                  <i class="fas fa-map-marker-alt"></i> マップから探す
-                <% end %>
-              </li>
               <li class="nav-item">
                 <%= link_to notifications_path, class: 'nav-link my-2 ml-3' do %>
                   <% if unchecked_notifications.any? %>
