@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
 
   root 'static_pages#home'
+
   resources :users, only: [:show, :edit, :update]
   resources :users do
     member do
@@ -24,10 +25,6 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
     resources :likes, only: [:create, :destroy]
   end
-  resources :relationships, only: [:create, :destroy]
-  resources :notifications, only: :index
-  resources :messages, :only => [:create, :destroy]
-  resources :rooms, :only => [:create, :show]
   get 'search' => 'posts#search'
   get 'favorites' => 'posts#favorites'
   get 'rank' => 'posts#rank'
@@ -35,4 +32,9 @@ Rails.application.routes.draw do
   get 'infection_control' => 'posts#infection_control'
   get 'timeline' => 'posts#timeline'
   get 'map_index' => 'posts#map_index'
+
+  resources :relationships, only: [:create, :destroy]
+  resources :notifications, only: :index
+  resources :messages, :only => [:create, :destroy]
+  resources :rooms, :only => [:create, :show]
 end
