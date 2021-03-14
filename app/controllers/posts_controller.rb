@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show, :search, :rank, :rate, :infection_control, :map_index]
-  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, onlu: [:new, :create, :edit, :update, :destroy, :favorites, :timeline]
+  before_action :correct_user, only: [:create, :edit, :update, :destroy]
 
   def index
     if params[:tag_name]
@@ -97,7 +97,7 @@ class PostsController < ApplicationController
     user = Post.find(params[:id]).user
     unless current_user && current_user == user
       flash[:danger] = '権限がありません！'
-      redirect_to(root_url)
+      redirect_to root_url
     end
   end
 end
