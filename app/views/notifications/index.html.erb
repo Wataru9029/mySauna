@@ -3,7 +3,7 @@
 <main class="container">
   <div class="row">
     <% if @notifications.exists? %>
-        <div class="card col-md-8 offset-md-2 mb-5 notifications">
+        <div class="card col-md-12 mb-5 notifications">
           <% @notifications.each do |notification| %>
             <div class="notification">
               <div class="notification-text mt-3">
