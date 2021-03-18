@@ -16,12 +16,16 @@ https://www.mysauna.tk/
 
 # 機能一覧
 ## ユーザー機能
+![mysauna_login mov](https://user-images.githubusercontent.com/43335573/111643541-647c0300-8842-11eb-8181-bd51bfb65bfe.gif)
+
 * ユーザー登録・編集・削除(deviseのgemを使用)
 * ゲストログイン
 * プロフィール画像の登録・編集(carrierwaveのgemを使用)
 * 管理者権限のあるユーザーのみ、ユーザー管理可能(rails_adminのgemを使用)
 
 ## サウナ施設の投稿機能
+![mysauna_post mov](https://user-images.githubusercontent.com/43335573/111643628-72318880-8842-11eb-93fd-ec41e157b645.gif)
+
 * お気に入りのサウナ施設(施設の写真、名前、住所等)を投稿
 * 一覧表示、詳細表示
 * 地図表示(Google Maps API)
@@ -31,18 +35,26 @@ https://www.mysauna.tk/
 * サウナ施設の検索機能(施設名、説明文、住所のOR検索)
 
 ## フォロー機能
+![mysauna_follow mov](https://user-images.githubusercontent.com/43335573/111643517-5fb74f00-8842-11eb-9afd-3cdd7a4fa5ba.gif)
+
 * ユーザーのフォロー・フォロー解除(非同期)
 * フォロー中のユーザーとフォロワーの一覧表示
 
 ## メッセージ機能
+![mysauna_message mov](https://user-images.githubusercontent.com/43335573/111643851-a311bd80-8842-11eb-9d5d-cd54c22b5629.gif)
+
 * ユーザー同士のメッセージ機能(作成、削除)
 
 ## 通知機能
+![mysauna_notification mov](https://user-images.githubusercontent.com/43335573/111643587-6c3ba780-8842-11eb-87d7-0b884faffba2.gif)
+
 * 以下のタイミングでユーザーに通知を送信(自分の投稿がいいねされた時, 自分の投稿にコメントされた時, 他ユーザーからフォローされた時)
 * 一覧表示
 * 未確認の通知がある場合はマークを表示
 
 ## その他の機能
+![mysauna_mapindex mov](https://user-images.githubusercontent.com/43335573/111643558-6776f380-8842-11eb-8348-5a76b6f9b430.gif)
+
 * ランキング機能(いいね順、高評価順、感染対策順)
 * 登録済みサウナ施設をマップから探す機能(Google Maps API)
 * ページネーション機能(kaminariのgemを使用)
