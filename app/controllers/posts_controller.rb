@@ -54,7 +54,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.search(params[:title_or_description_or_address_cont])
+    @posts = Post.search(params[:keyword])
     @posts = @posts.order('updated_at DESC').page(params[:page]).per(PER)
   end
 
