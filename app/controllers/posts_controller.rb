@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, onlu: [:new, :create, :edit, :update, :destroy, :favorites, :timeline]
-  before_action :correct_user, only: [:create, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
     if params[:tag_name]
@@ -92,7 +92,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :image, :remove_image, :address, :description, :site_url, :tag_list, :rate, :infection_control_rate)
   end
 
-  # 権限のないページへのアクセス&編集を制限
+  # 権限のない投稿の編集・更新を制限
   def correct_user
     user = Post.find(params[:id]).user
     unless current_user && current_user == user
