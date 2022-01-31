@@ -90,17 +90,17 @@ RSpec.describe 'Posts', type: :system do
   describe 'ランキングページ' do
     it '正常に人気サウナが表示されていること' do
       visit rank_path
-      expect(page).to have_selector 'h3.rank-posts', text: '♨︎ 人気サウナ10選 ♨︎'
+      expect(page).to have_content '人気ランキング'
     end
 
     it '正常に高評価サウナが表示されていること' do
       visit rate_path
-      expect(page).to have_selector 'h3.rate-posts', text: '♨︎ おすすめ度の高いサウナ ♨︎'
+      expect(page).to have_content '高評価ランキング'
     end
 
     it '正常に衛生的サウナが表示されていること' do
       visit infection_control_path
-      expect(page).to have_selector 'h3.infection-control-posts', text: '♨︎ 感染対策度の高いサウナ ♨︎'
+      expect(page).to have_content'感染対策ランキング'
     end
   end
 end
