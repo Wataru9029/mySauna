@@ -2,7 +2,10 @@
   "name": "app_name",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "4.3.0"
+    "@rails/webpacker": "4.3.0",
+    "vue": "^3.2.30",
+    "vue-loader": "^17.0.0",
+    "vue-template-compiler": "^2.6.14"
   },
   "devDependencies": {
     "webpack-dev-server": "^4.7.4"
